@@ -1,2 +1,2 @@
 # NoteApp
-This repository contain  source code of NoteApp making for labs in Tusur
+Этот проект выполняется в рамках университетского курса.
