@@ -3,38 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NoteApp
 {
+    /// <summary>
+    /// Класс заметки , содержащий в себе поля для заметок. 
+    /// </summary>
     public class Note
     {
-        protected String Title { get; set; } = "Заголовок";
-        
-        protected String Category
+        private string _category;
+        private string Title { get; set; } = "Заголовок";
+        private string NoteText { get; set; } = "Текст заметки";
+        public DateTime DateofCreation { get; set; } = DateTime.Now;
+        public DateTime LastmodDate { get; set; } = DateTime.Now;
+
+        public Note(string title, string noteText, string category, DateTime dateofCreation, DateTime lastmodDate)
+        {
+            Title = title;
+            NoteText = noteText;
+            Category = category;
+            DateofCreation = dateofCreation;
+            LastmodDate = lastmodDate;
+        }
+
+        public string Category
         {
             get
             {
-                return Category;
+                return _category;
             }
 
             set
             {
-
-                Category = "Заголовок";
+                _category = value;
+                
             }
         }
-        protected String NoteText { get; set; } = "Текст заметки";
-        private DateTime DateofCreation { get; set; } = DateTime.Now;
-        private DateTime LastmodDate { get; set; } = DateTime.Now;
-
-            //public string Title { get; set; } // Автоматический свойства
         
-        //Конструктор класса
-        public Note (String Title, String Text, 
-            String NoteText, DateTime DateofCreation, DateTime LastmodDate)
-        {
-            Title = title;
 
-        }
+        //public string Title { get; set; } // Автоматический свойства
+
+        // Конструктор класса
+        
+
     }
 }

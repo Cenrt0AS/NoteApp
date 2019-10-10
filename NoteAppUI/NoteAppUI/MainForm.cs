@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NoteApp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace NoteAppUI
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+             
+            
         }
     }
 }

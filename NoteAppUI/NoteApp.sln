@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteAppUI", "NoteAppUI\Note
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteApp", "NoteApp\NoteApp.csproj", "{893A8A5B-A99A-4094-8230-1FDA8A435D96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppe", "ConsoleAppe\ConsoleAppe.csproj", "{3F35F57B-764F-48C9-9409-92DDE6F320E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{893A8A5B-A99A-4094-8230-1FDA8A435D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{893A8A5B-A99A-4094-8230-1FDA8A435D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{893A8A5B-A99A-4094-8230-1FDA8A435D96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F35F57B-764F-48C9-9409-92DDE6F320E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F35F57B-764F-48C9-9409-92DDE6F320E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F35F57B-764F-48C9-9409-92DDE6F320E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F35F57B-764F-48C9-9409-92DDE6F320E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
