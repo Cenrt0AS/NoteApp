@@ -13,7 +13,7 @@ namespace ConsoleAppe
     {
         static void Main(string[] args)
         {
-            Note note= new Note("tittel","text","category",DateTime.Now,DateTime.Now);
+            Note note= new Note("tittel","text",noteCategory.finance,DateTime.Now,DateTime.Now);
             //Запись в JSON файл 
             File.WriteAllText("note.json", JsonConvert.SerializeObject(note));
 

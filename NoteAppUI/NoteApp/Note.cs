@@ -12,13 +12,13 @@ namespace NoteApp
     /// </summary>
     public class Note
     {
-        private string _category;
+        private noteCategory _category;
         private string Title { get; set; } = "Заголовок";
         private string NoteText { get; set; } = "Текст заметки";
         public DateTime DateofCreation { get; set; } = DateTime.Now;
         public DateTime LastmodDate { get; set; } = DateTime.Now;
 
-        public Note(string title, string noteText, string category, DateTime dateofCreation, DateTime lastmodDate)
+        public Note(string title, string noteText, noteCategory category, DateTime dateofCreation, DateTime lastmodDate)
         {
             Title = title;
             NoteText = noteText;
@@ -27,7 +27,7 @@ namespace NoteApp
             LastmodDate = lastmodDate;
         }
 
-        public string Category
+        public noteCategory Category
         {
             get
             {
@@ -37,15 +37,7 @@ namespace NoteApp
             set
             {
                 _category = value;
-                
             }
         }
-        
-
-        //public string Title { get; set; } // Автоматический свойства
-
-        // Конструктор класса
-        
-
     }
 }
