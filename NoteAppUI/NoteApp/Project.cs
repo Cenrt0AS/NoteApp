@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
-    class Project
+    /// <summary>
+    /// Класс,содержащий в себе структуру данных словарь.
+    /// </summary>
+    public class Project
     {
-       // Dictionary<int TKey, >
+        Dictionary<int, Note> dictionary;
+
     }
 }

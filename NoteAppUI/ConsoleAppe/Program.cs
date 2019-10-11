@@ -13,18 +13,17 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Note note= new Note("tittel","text",NoteCategory.Finance,DateTime.Now,DateTime.Now);
+            Note note= new Dictionary(1,"tittel","text",NoteCategory.Finance,DateTime.Now,DateTime.Now);
 
-           // SaveToFile(,test.txt)
-           //Запись в JSON файл 
-           //  File.WriteAllText("note.json", JsonConvert.SerializeObject(note));
+            SaveToFile(note);
 
-            // Чтение из JSON файла
-            //File.Exists("note.json") ? JsonConvert.DeserializeObject<Note> : new Note()  
-                Console.WriteLine(note.Title + note.DateofCreation);       
+
+           // LoadFromFile("test.txt");
+
+            
+            Console.WriteLine(note.Title + note.DateofCreation);       
             Console.ReadKey();
-            //serializer.Serialize(writer, note);
-            //  SaveToFile()
+            
         }
     }
 }

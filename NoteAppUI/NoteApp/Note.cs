@@ -11,12 +11,31 @@ namespace NoteApp
     /// </summary>
     public class Note
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private NoteCategory _category;
+
+        /// <summary>
+        /// 
+        /// </summary>
         private string _title;
+
+        /// <summary>
+        /// 
+        /// </summary>
         private string NoteText { get; set; } = "Текст заметки";
         public DateTime DateofCreation { get; set; } = DateTime.Now;
         public DateTime LastmodDate { get; set; } = DateTime.Now;
 
+        /// <summary>
+        /// Конструктор класса Note.
+        /// </summary>
+        /// <param name="title"> Поле Заголовок заметки</param>
+        /// <param name="noteText"> Поле Текст заметки</param>
+        /// <param name="category"> Поле Категория заметки</param>
+        /// <param name="dateofCreation"> Поле Дата создания заметки</param>
+        /// <param name="lastmodDate"> Поле Дата изменения заметки</param>
         public Note(string title, string noteText, NoteCategory category, DateTime dateofCreation, DateTime lastmodDate)
         {
             Title = _title;
@@ -34,8 +53,10 @@ namespace NoteApp
 
             set 
             {
-                if (value.Length > 50) // Тут ошибка
+                if (value.Length < 50)
                     _title = value;
+                else
+                    throw new ArgumentException();
             }
 
         }
