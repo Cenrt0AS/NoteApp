@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
-    public enum noteCategory
-    {
-        work, home, health_and_sport, people, docs,
-        finance, other
+        public enum NoteCategory
+        {
+            Work,
+            Home,
+            HealthAndSport,
+            People,
+            Docs,
+            Finance,
+            Other
+        
     }
 }

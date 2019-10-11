@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NoteApp
 {
@@ -12,32 +11,34 @@ namespace NoteApp
     /// </summary>
     public class Note
     {
-        private noteCategory _category;
-        private string Title { get; set; } = "Заголовок";
+        private NoteCategory _category;
+        private string _title;
         private string NoteText { get; set; } = "Текст заметки";
         public DateTime DateofCreation { get; set; } = DateTime.Now;
         public DateTime LastmodDate { get; set; } = DateTime.Now;
 
-        public Note(string title, string noteText, noteCategory category, DateTime dateofCreation, DateTime lastmodDate)
+        public Note(string title, string noteText, NoteCategory category, DateTime dateofCreation, DateTime lastmodDate)
         {
-            Title = title;
+            Title = _title;
             NoteText = noteText;
-            Category = category;
+            category = _category;
             DateofCreation = dateofCreation;
             LastmodDate = lastmodDate;
         }
-
-        public noteCategory Category
+        public string Title 
         {
             get
             {
-                return _category;
+                return _title;
             }
 
-            set
+            set 
             {
-                _category = value;
+                if (value.Length > 50) // Тут ошибка
+                    _title = value;
             }
+
         }
     }
 }
+    
