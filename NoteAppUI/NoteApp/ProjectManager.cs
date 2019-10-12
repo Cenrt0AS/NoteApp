@@ -27,19 +27,19 @@ namespace NoteApp
         }
     }
 
-    //    public static <Dictionary> LoadFromFile(string filename)
-    //    {
-    //            //Создаём переменную, в которую поместим результат десериализации
-    //            Note note = null;
-    //            //Создаём экземпляр сериализатора
-    //            JsonSerializer serializer = new JsonSerializer();
-    //            //Открываем поток для чтения из файла с указанием пути
-    //            using (StreamReader sr = new StreamReader(@"c:\json.txt"))
-    //            using (JsonReader reader = new JsonTextReader(sr))
-    //            {
-    //                //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
-    //                note = (Project)serializer.Deserialize<Note>(reader);
-    //            }
-    //}
-}
+        public static Note LoadFromFile(/*string filename*/)
+        {
+            //Создаём переменную, в которую поместим результат десериализации
+            Note note = null;
+            //Создаём экземпляр сериализатора
+            JsonSerializer serializer = new JsonSerializer();
+            //Открываем поток для чтения из файла с указанием пути
+            using (StreamReader sr = new StreamReader(@"c:\json.txt"))
+            using (JsonReader reader = new JsonTextReader(sr))
+            {
+                //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
+                note = (Project)serializer.Deserialize<Note>(reader);
+            }
+        }
+    }
 }

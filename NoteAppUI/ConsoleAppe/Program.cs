@@ -13,12 +13,12 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Note note= new Dictionary(1,"tittel","text",NoteCategory.Finance,DateTime.Now,DateTime.Now);
-
-            SaveToFile(note);
-
-
-           // LoadFromFile("test.txt");
+            var note= new Dictionary<int,Note>
+            {
+                {1, new Note("tittel", "text", NoteCategory.Finance, DateTime.Now, DateTime.Now ) }
+            };
+            ProjectManager.SaveToFile(note);
+            ProjectManager.LoadFromFile("test.txt");
 
             
             Console.WriteLine(note.Title + note.DateofCreation);       

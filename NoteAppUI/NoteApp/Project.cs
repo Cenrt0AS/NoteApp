@@ -11,7 +11,10 @@ namespace NoteApp
     /// </summary>
     public class Project
     {
-        Dictionary<int, Note> dictionary;
+        /// <summary>
+        /// Словарь, который содержит в себе ключ и значение из полей Note.
+        /// </summary>
+      public  Dictionary<int, Note> dictionary;
 
     }
 }

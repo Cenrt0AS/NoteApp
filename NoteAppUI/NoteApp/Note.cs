@@ -14,7 +14,7 @@ namespace NoteApp
         /// <summary>
         /// 
         /// </summary>
-        private NoteCategory _category;
+        public NoteCategory Category;
 
         /// <summary>
         /// 
@@ -24,7 +24,7 @@ namespace NoteApp
         /// <summary>
         /// 
         /// </summary>
-        private string NoteText { get; set; } = "Текст заметки";
+        public string NoteText { get; set; } = "Текст заметки";
         public DateTime DateofCreation { get; set; } = DateTime.Now;
         public DateTime LastmodDate { get; set; } = DateTime.Now;
 
@@ -38,9 +38,9 @@ namespace NoteApp
         /// <param name="lastmodDate"> Поле Дата изменения заметки</param>
         public Note(string title, string noteText, NoteCategory category, DateTime dateofCreation, DateTime lastmodDate)
         {
-            Title = _title;
+            Title = title; //
             NoteText = noteText;
-            category = _category;
+            Category = category;
             DateofCreation = dateofCreation;
             LastmodDate = lastmodDate;
         }
