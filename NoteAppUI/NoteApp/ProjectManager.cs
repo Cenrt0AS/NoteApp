@@ -14,12 +14,12 @@ namespace NoteApp
      public class ProjectManager
     { 
       
-     public static void SaveToFile(Note note /*string filename*/)
+     public static void SaveToFile(Note note, string filename )
     {
         // Создаём экземпляр сериализатора
         JsonSerializer serializer = new JsonSerializer();
         //Открываем поток для записи в файл с указанием пути
-        using (StreamWriter sw = new StreamWriter(@"c:\json.txt"))
+        using (StreamWriter sw = new StreamWriter(filename))
         using (JsonWriter writer = new JsonTextWriter(sw))
         {
             //Вызываем сериализацию и передаем объект, который хотим сериализовать. Использую временно Note взаместо Project.
@@ -27,19 +27,20 @@ namespace NoteApp
         }
     }
 
-        public static Note LoadFromFile(/*string filename*/)
+        public static Note LoadFromFile(string filename)
         {
             //Создаём переменную, в которую поместим результат десериализации
             Note note = null;
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для чтения из файла с указанием пути
-            using (StreamReader sr = new StreamReader(@"c:\json.txt"))
+            using (StreamReader sr = new StreamReader(filename))
             using (JsonReader reader = new JsonTextReader(sr))
             {
                 //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
-                note = (Project)serializer.Deserialize<Note>(reader);
+                note = serializer.Deserialize<Note>(reader);
             }
+            return note;
         }
     }
 }

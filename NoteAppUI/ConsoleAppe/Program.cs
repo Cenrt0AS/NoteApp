@@ -13,15 +13,18 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            var note= new Dictionary<int,Note>
-            {
-                {1, new Note("tittel", "text", NoteCategory.Finance, DateTime.Now, DateTime.Now ) }
-            };
-            ProjectManager.SaveToFile(note);
-            ProjectManager.LoadFromFile("test.txt");
+            Note note = new Note("tittel", "text", NoteCategory.Finance, DateTime.Now, DateTime.Now);
+            Note note2;           
 
-            
-            Console.WriteLine(note.Title + note.DateofCreation);       
+            ProjectManager.SaveToFile(note,@"d:\test.txt");
+
+            note2 = ProjectManager.LoadFromFile(@"d:\test.txt");
+
+
+            Project dict = new Project();
+            dict.dictionary.Add(1, note);
+
+            Console.WriteLine(note2.Title + note2.DateofCreation);       
             Console.ReadKey();
             
         }
