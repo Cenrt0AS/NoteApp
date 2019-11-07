@@ -17,9 +17,11 @@ namespace NoteAppUI
         {
             InitializeComponent();
             // Вызываем форм1
+            //TestForm frm1 = new TestForm();
             Form1 frm1 = new Form1();
             frm1.Show();
-            
+           this.Hide();
+
         }
 
     }
