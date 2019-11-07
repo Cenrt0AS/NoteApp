@@ -16,12 +16,11 @@ namespace NoteAppUI
         public MainForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-             
+            // Вызываем форм1
+            Form1 frm1 = new Form1();
+            frm1.Show();
             
         }
+
     }
 }
