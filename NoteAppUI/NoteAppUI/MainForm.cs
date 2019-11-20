@@ -55,5 +55,20 @@ namespace NoteApp
             // show(ProjectManager.LoADfROMfILE("sdfsdfs.json");
             //foreach(note in project.disctionary){show(note.name)};
         }
+
+        private void pictureBoxAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxRemove_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

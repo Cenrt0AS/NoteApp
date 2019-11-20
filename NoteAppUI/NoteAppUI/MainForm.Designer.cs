@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -47,9 +48,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.button1 = new System.Windows.Forms.Button();
             this.DictionaryListBox = new System.Windows.Forms.ListBox();
+            this.pictureBoxAdd = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRemove = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEdit = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRemove)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,7 +106,7 @@
             this.приветToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.приветToolStripMenuItem.Name = "приветToolStripMenuItem";
-            this.приветToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.приветToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.приветToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -117,25 +123,25 @@
             this.editNoteToolStripMenuItem,
             this.removeNoteToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addNoteToolStripMenuItem
             // 
             this.addNoteToolStripMenuItem.Name = "addNoteToolStripMenuItem";
-            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.addNoteToolStripMenuItem.Text = "Add Note";
             // 
             // editNoteToolStripMenuItem
             // 
             this.editNoteToolStripMenuItem.Name = "editNoteToolStripMenuItem";
-            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.editNoteToolStripMenuItem.Text = "Edit Note";
             // 
             // removeNoteToolStripMenuItem
             // 
             this.removeNoteToolStripMenuItem.Name = "removeNoteToolStripMenuItem";
-            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.removeNoteToolStripMenuItem.Text = "Remove Note";
             // 
             // helpToolStripMenuItem
@@ -143,13 +149,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -201,37 +207,68 @@
             // 
             // webBrowser1
             // 
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser1.Location = new System.Drawing.Point(306, 150);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(482, 269);
             this.webBrowser1.TabIndex = 11;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(15, 339);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // DictionaryListBox
             // 
+            this.DictionaryListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.DictionaryListBox.FormattingEnabled = true;
             this.DictionaryListBox.Location = new System.Drawing.Point(15, 113);
             this.DictionaryListBox.Name = "DictionaryListBox";
-            this.DictionaryListBox.Size = new System.Drawing.Size(120, 95);
+            this.DictionaryListBox.Size = new System.Drawing.Size(120, 199);
             this.DictionaryListBox.TabIndex = 13;
             this.DictionaryListBox.SelectedIndexChanged += new System.EventHandler(this.DictionaryListBox_SelectedIndexChanged);
+            // 
+            // pictureBoxAdd
+            // 
+            this.pictureBoxAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBoxAdd.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAdd.Image")));
+            this.pictureBoxAdd.Location = new System.Drawing.Point(12, 412);
+            this.pictureBoxAdd.Name = "pictureBoxAdd";
+            this.pictureBoxAdd.Size = new System.Drawing.Size(16, 26);
+            this.pictureBoxAdd.TabIndex = 14;
+            this.pictureBoxAdd.TabStop = false;
+            this.pictureBoxAdd.Click += new System.EventHandler(this.pictureBoxAdd_Click);
+            // 
+            // pictureBoxRemove
+            // 
+            this.pictureBoxRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBoxRemove.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRemove.Image")));
+            this.pictureBoxRemove.Location = new System.Drawing.Point(57, 412);
+            this.pictureBoxRemove.Name = "pictureBoxRemove";
+            this.pictureBoxRemove.Size = new System.Drawing.Size(17, 26);
+            this.pictureBoxRemove.TabIndex = 15;
+            this.pictureBoxRemove.TabStop = false;
+            this.pictureBoxRemove.Click += new System.EventHandler(this.pictureBoxRemove_Click);
+            // 
+            // pictureBoxEdit
+            // 
+            this.pictureBoxEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBoxEdit.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEdit.Image")));
+            this.pictureBoxEdit.Location = new System.Drawing.Point(34, 412);
+            this.pictureBoxEdit.Name = "pictureBoxEdit";
+            this.pictureBoxEdit.Size = new System.Drawing.Size(17, 26);
+            this.pictureBoxEdit.TabIndex = 16;
+            this.pictureBoxEdit.TabStop = false;
+            this.pictureBoxEdit.Click += new System.EventHandler(this.pictureBoxEdit_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBoxEdit);
+            this.Controls.Add(this.pictureBoxRemove);
+            this.Controls.Add(this.pictureBoxAdd);
             this.Controls.Add(this.DictionaryListBox);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -248,6 +285,9 @@
             this.Text = "NoteApp";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRemove)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,7 +314,9 @@
         private System.Windows.Forms.ToolStripMenuItem editNoteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeNoteToolStripMenuItem;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox DictionaryListBox;
+        private System.Windows.Forms.PictureBox pictureBoxAdd;
+        private System.Windows.Forms.PictureBox pictureBoxRemove;
+        private System.Windows.Forms.PictureBox pictureBoxEdit;
     }
 }
