@@ -12,9 +12,9 @@ namespace NoteApp
     /// Класс Сериализации, с помощью которого выполняется загрузка/выгрузка информации в формате JSON.
     /// </summary>
      public class ProjectManager
-    { 
-      
-     public static void SaveToFile(Note note, string filename )
+    {
+        //TODO: NOTE -> DICITIONARY
+        public static void SaveToFile(Note note, string filename )
     {
         // Создаём экземпляр сериализатора
         JsonSerializer serializer = new JsonSerializer();
@@ -26,7 +26,7 @@ namespace NoteApp
             serializer.Serialize(writer, note);
         }
     }
-
+        //TODO: NOTE -> DICITIONARY
         public static Note LoadFromFile(string filename)
         {
             //Создаём переменную, в которую поместим результат десериализации
