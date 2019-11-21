@@ -52,6 +52,7 @@
             this.pictureBoxAdd = new System.Windows.Forms.PictureBox();
             this.pictureBoxRemove = new System.Windows.Forms.PictureBox();
             this.pictureBoxEdit = new System.Windows.Forms.PictureBox();
+            this.Refresh = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRemove)).BeginInit();
@@ -106,7 +107,7 @@
             this.приветToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.приветToolStripMenuItem.Name = "приветToolStripMenuItem";
-            this.приветToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.приветToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.приветToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -123,27 +124,27 @@
             this.editNoteToolStripMenuItem,
             this.removeNoteToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addNoteToolStripMenuItem
             // 
             this.addNoteToolStripMenuItem.Name = "addNoteToolStripMenuItem";
-            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.addNoteToolStripMenuItem.Text = "Add Note";
             this.addNoteToolStripMenuItem.Click += new System.EventHandler(this.addNoteToolStripMenuItem_Click);
             // 
             // editNoteToolStripMenuItem
             // 
             this.editNoteToolStripMenuItem.Name = "editNoteToolStripMenuItem";
-            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.editNoteToolStripMenuItem.Text = "Edit Note";
             this.editNoteToolStripMenuItem.Click += new System.EventHandler(this.editNoteToolStripMenuItem_Click);
             // 
             // removeNoteToolStripMenuItem
             // 
             this.removeNoteToolStripMenuItem.Name = "removeNoteToolStripMenuItem";
-            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.removeNoteToolStripMenuItem.Text = "Remove Note";
             // 
             // helpToolStripMenuItem
@@ -151,13 +152,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -262,11 +263,22 @@
             this.pictureBoxEdit.TabStop = false;
             this.pictureBoxEdit.Click += new System.EventHandler(this.pictureBoxEdit_Click);
             // 
+            // Refresh
+            // 
+            this.Refresh.Location = new System.Drawing.Point(187, 150);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(75, 23);
+            this.Refresh.TabIndex = 17;
+            this.Refresh.Text = "button1";
+            this.Refresh.UseVisualStyleBackColor = true;
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Refresh);
             this.Controls.Add(this.pictureBoxEdit);
             this.Controls.Add(this.pictureBoxRemove);
             this.Controls.Add(this.pictureBoxAdd);
@@ -320,5 +332,6 @@
         private System.Windows.Forms.PictureBox pictureBoxAdd;
         private System.Windows.Forms.PictureBox pictureBoxRemove;
         private System.Windows.Forms.PictureBox pictureBoxEdit;
+        private System.Windows.Forms.Button Refresh;
     }
 }

@@ -11,10 +11,10 @@ namespace NoteApp
     /// <summary>
     /// Класс Сериализации, с помощью которого выполняется загрузка/выгрузка информации в формате JSON.
     /// </summary>
-     public class ProjectManager
+     public static class ProjectManager
     {
-        //TODO: NOTE -> DICITIONARY был Note ???
-        public static void SaveToFile(Dictionary<int,Note> note, string filename )
+        
+        public static void SaveToFile(Project project, string filename )
     {
         // Создаём экземпляр сериализатора
         JsonSerializer serializer = new JsonSerializer();
@@ -23,15 +23,15 @@ namespace NoteApp
         using (JsonWriter writer = new JsonTextWriter(sw))
         {
             //Вызываем сериализацию и передаем объект, который хотим сериализовать. Использую временно Note взаместо Project.
-            serializer.Serialize(writer, note);
+            serializer.Serialize(writer, project);
         }
     }
-        //TODO: NOTE -> DICITIONARY ???
-        public static Note LoadFromFile(string filename)
+        
+        public static Project LoadFromFile(string filename)
         {
             //Создаём переменную, в которую поместим результат десериализации
            //  Note note = null;
-            Dictionary<int, Note> tempdictionary = new Dictionary<int, Note>();
+            Project tempdictionary = new Project();
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для чтения из файла с указанием пути
@@ -39,7 +39,7 @@ namespace NoteApp
             using (JsonReader reader = new JsonTextReader(sr))
             {
                 //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
-              tempdictionary = serializer.Deserialize<Dictionary<int,Note>>(reader);
+              tempdictionary = serializer.Deserialize<Project>(reader);
             }
             return tempdictionary;
         }

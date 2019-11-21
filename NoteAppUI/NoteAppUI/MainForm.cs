@@ -13,12 +13,14 @@ namespace NoteApp
 {
     public partial class MainForm : Form
     {
-        // создаем новый экземпляр projectManager
+        // создаем новый экземпляр project
         private Project _project;
         
         public MainForm()
-        {           
+        {
             InitializeComponent();
+            ProjectLoading();
+            
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,16 +36,17 @@ namespace NoteApp
         }
 
         // (десериализация) загружает словарь заметок, добавить в _project.dictionary
-        private void ProjectLoad()
-        {    try
-            {
-                string defaultPath = "@c:\\text.json";
-                 _project.dictionary = ProjectManager.LoadFromFile(defaultPath);
-            }
-             catch 
-            {
-                 _project = new Project();
-            }
+        public void ProjectLoading()
+        {    //try
+            //{
+                string defaultPath = @"d:\text.json";
+                
+                _project = ProjectManager.LoadFromFile(defaultPath);
+            //}
+            // catch 
+            //{
+            //     _project = new Project();
+            //}
         }
 
         //
@@ -55,6 +58,8 @@ namespace NoteApp
         //TODO: Вывести сохраненные файлы
         private void DictionaryListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //string noteItem = _project.dictionary[1].Title;
+            DictionaryListBox.Items.Insert(0, "vanya");
             // show(ProjectManager.LoADfROMfILE("sdfsdfs.json");
             //foreach(note in project.dictionary){show(note.name)};
         }
@@ -84,6 +89,11 @@ namespace NoteApp
         {
             NoteManageForm frm = new NoteManageForm();
             frm.Show();
+        }
+
+        public void Refresh_Click(object sender, EventArgs e)
+        {
+            DictionaryListBox.Items.Insert(0, "vanya");
         }
     }
 }

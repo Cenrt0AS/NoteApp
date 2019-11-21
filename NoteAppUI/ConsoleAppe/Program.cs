@@ -13,18 +13,26 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Note note = new Note("tittel", "text", NoteCategory.Finance, DateTime.Now, DateTime.Now);
-            Note note2;           
+            Note note = new Note("imya", "text", NoteCategory.Finance, DateTime.Now, DateTime.Now);
 
-           // ProjectManager.SaveToFile(note,@"d:\test.txt");
+            Project pClass = new Project();
 
-           // note2 = ProjectManager.LoadFromFile(@"d:\test.txt");
+            pClass.dictionary.Add(1, note);
+
+            
+            ProjectManager.SaveToFile(pClass, @"d:\\text.json");
+
+            Project pClass2 = new Project();
+
+            
+            Console.WriteLine(ProjectManager.LoadFromFile(@"d:\\text.json").dictionary[1].Title);
+           
 
 
-            Project dict = new Project();
-            dict.dictionary.Add(1, note);
+          // Project dict = new Project();
+          // dict.dictionary.Add(1, note);
 
-          //  Console.WriteLine(note2.Title + note2.DateofCreation);       
+          // Console.WriteLine(note2.Title + note2.DateofCreation);       
             Console.ReadKey();
             
         }
