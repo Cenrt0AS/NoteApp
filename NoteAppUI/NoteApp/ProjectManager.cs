@@ -13,8 +13,8 @@ namespace NoteApp
     /// </summary>
      public class ProjectManager
     {
-        //TODO: NOTE -> DICITIONARY
-        public static void SaveToFile(Note note, string filename )
+        //TODO: NOTE -> DICITIONARY был Note ???
+        public static void SaveToFile(Dictionary<int,Note> note, string filename )
     {
         // Создаём экземпляр сериализатора
         JsonSerializer serializer = new JsonSerializer();
@@ -26,11 +26,12 @@ namespace NoteApp
             serializer.Serialize(writer, note);
         }
     }
-        //TODO: NOTE -> DICITIONARY
+        //TODO: NOTE -> DICITIONARY ???
         public static Note LoadFromFile(string filename)
         {
             //Создаём переменную, в которую поместим результат десериализации
-            Note note = null;
+           //  Note note = null;
+            Dictionary<int, Note> tempdictionary = new Dictionary<int, Note>();
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для чтения из файла с указанием пути
@@ -38,9 +39,9 @@ namespace NoteApp
             using (JsonReader reader = new JsonTextReader(sr))
             {
                 //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
-                note = serializer.Deserialize<Note>(reader);
+              tempdictionary = serializer.Deserialize<Dictionary<int,Note>>(reader);
             }
-            return note;
+            return tempdictionary;
         }
     }
 }

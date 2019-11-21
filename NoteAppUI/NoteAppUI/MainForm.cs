@@ -35,25 +35,28 @@ namespace NoteApp
 
         // (десериализация) загружает словарь заметок, добавить в _project.dictionary
         private void ProjectLoad()
-        {   // try
-            // _project.dictionary = ProjectManager.LoadFromFile();
-
-            // catch
-            // _project = new Project();
-            
+        {    try
+            {
+                string defaultPath = "@c:\\text.json";
+                 _project.dictionary = ProjectManager.LoadFromFile(defaultPath);
+            }
+             catch 
+            {
+                 _project = new Project();
+            }
         }
 
         //
         private void ProjectSave()
         {
-            //ProjectManager.SaveToFile();
+           // ProjectManager.SaveToFile();
         }
 
         //TODO: Вывести сохраненные файлы
         private void DictionaryListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // show(ProjectManager.LoADfROMfILE("sdfsdfs.json");
-            //foreach(note in project.disctionary){show(note.name)};
+            //foreach(note in project.dictionary){show(note.name)};
         }
 
         private void pictureBoxAdd_Click(object sender, EventArgs e)
@@ -69,6 +72,18 @@ namespace NoteApp
         private void pictureBoxRemove_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NoteManageForm frm = new NoteManageForm();
+            frm.Show();
+        }
+
+        private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NoteManageForm frm = new NoteManageForm();
+            frm.Show();
         }
     }
 }

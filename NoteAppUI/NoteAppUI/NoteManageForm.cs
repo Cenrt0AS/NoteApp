@@ -7,6 +7,8 @@ namespace NoteApp
         public NoteManageForm()
         {
             InitializeComponent();
-        }      
+        }
+
+        
     }
 }

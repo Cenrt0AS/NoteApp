@@ -16,15 +16,15 @@ namespace ConsoleApp
             Note note = new Note("tittel", "text", NoteCategory.Finance, DateTime.Now, DateTime.Now);
             Note note2;           
 
-            ProjectManager.SaveToFile(note,@"d:\test.txt");
+           // ProjectManager.SaveToFile(note,@"d:\test.txt");
 
-            note2 = ProjectManager.LoadFromFile(@"d:\test.txt");
+           // note2 = ProjectManager.LoadFromFile(@"d:\test.txt");
 
 
             Project dict = new Project();
             dict.dictionary.Add(1, note);
 
-            Console.WriteLine(note2.Title + note2.DateofCreation);       
+          //  Console.WriteLine(note2.Title + note2.DateofCreation);       
             Console.ReadKey();
             
         }
