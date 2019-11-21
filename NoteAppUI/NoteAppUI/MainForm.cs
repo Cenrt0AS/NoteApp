@@ -93,7 +93,7 @@ namespace NoteApp
 
         public void Refresh_Click(object sender, EventArgs e)
         {
-            DictionaryListBox.Items.Insert(0, "vanya");
+            
         }
     }
 }

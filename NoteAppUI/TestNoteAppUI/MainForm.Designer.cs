@@ -41,10 +41,10 @@
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Captionlabel = new System.Windows.Forms.Label();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.CategoryLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -53,6 +53,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.Titlelabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -162,23 +163,23 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ShowCategory:";
             // 
-            // label2
+            // Captionlabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(301, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Текст заметки:";
+            this.Captionlabel.AutoSize = true;
+            this.Captionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Captionlabel.Location = new System.Drawing.Point(301, 33);
+            this.Captionlabel.Name = "Captionlabel";
+            this.Captionlabel.Size = new System.Drawing.Size(103, 25);
+            this.Captionlabel.TabIndex = 4;
+            this.Captionlabel.Text = "Заметка:";
             // 
-            // comboBox1
+            // cbCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(98, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(98, 33);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cbCategory.TabIndex = 5;
             // 
             // label3
             // 
@@ -189,14 +190,15 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Category:";
             // 
-            // label4
+            // CategoryLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(364, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "label4";
+            this.CategoryLabel.AutoSize = true;
+            this.CategoryLabel.Location = new System.Drawing.Point(364, 75);
+            this.CategoryLabel.Name = "CategoryLabel";
+            this.CategoryLabel.Size = new System.Drawing.Size(35, 13);
+            this.CategoryLabel.TabIndex = 7;
+            this.CategoryLabel.Text = "label4";
+            this.CategoryLabel.Visible = false;
             // 
             // pictureBox1
             // 
@@ -207,6 +209,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(18, 21);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -217,6 +220,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(20, 21);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
@@ -239,10 +243,13 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(359, 104);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(137, 20);
             this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePicker1.Visible = false;
             // 
             // label6
             // 
@@ -255,10 +262,13 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.Checked = false;
+            this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Location = new System.Drawing.Point(560, 104);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(142, 20);
             this.dateTimePicker2.TabIndex = 14;
+            this.dateTimePicker2.Visible = false;
             // 
             // listBox2
             // 
@@ -271,11 +281,23 @@
             this.listBox2.Size = new System.Drawing.Size(396, 264);
             this.listBox2.TabIndex = 15;
             // 
+            // Titlelabel
+            // 
+            this.Titlelabel.AutoSize = true;
+            this.Titlelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Titlelabel.Location = new System.Drawing.Point(410, 33);
+            this.Titlelabel.Name = "Titlelabel";
+            this.Titlelabel.Size = new System.Drawing.Size(86, 31);
+            this.Titlelabel.TabIndex = 16;
+            this.Titlelabel.Text = "label2";
+            this.Titlelabel.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 420);
+            this.Controls.Add(this.Titlelabel);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label6);
@@ -284,10 +306,10 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.Captionlabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
@@ -318,10 +340,10 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label Captionlabel;
+        private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label CategoryLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -330,6 +352,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label Titlelabel;
     }
 }
 
