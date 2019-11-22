@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace NoteApp
 {
     /// <summary>
-    /// Класс заметки , содержащий в себе поля для заметок. 
+    /// Класс заметки, содержащий в себе поля для заметок. 
     /// </summary>
     public class Note
     {
@@ -51,12 +51,18 @@ namespace NoteApp
                 return _title;
             }
 
-            set 
+            set
             {
                 if (value.Length < 50)
+                {
                     _title = value;
+                    //TODO: Mofified Date.
+                    LastmodDate = DateTime.Now;
+                }
+
                 else
                     throw new ArgumentException();
+            
             }
 
         }

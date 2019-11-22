@@ -18,9 +18,9 @@ namespace ConsoleApp
             Note note2 = new Note("imya2", "text2", NoteCategory.HealthAndSport, DateTime.Now, DateTime.Now);
             Project pClass = new Project();
 
-            pClass.dictionary.Add(1, note);
-            pClass.dictionary.Add(2, note1);
-            pClass.dictionary.Add(3, note2);
+            pClass.dictionary.Add(0, note);
+            pClass.dictionary.Add(1, note1);
+            pClass.dictionary.Add(2, note2);
 
             ProjectManager.SaveToFile(pClass, @"d:\\text.json");
 

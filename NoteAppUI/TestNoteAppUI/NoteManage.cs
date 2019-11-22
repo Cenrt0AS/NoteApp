@@ -21,6 +21,14 @@ namespace TestNoteAppUI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //TODO: Добавление
+            int Category = cbCategory1.SelectedIndex;
+            Note note = new Note(titleTBox.Text, textBox1.Text,(NoteCategory)Category, DateTime.Now, DateTime.Now);
+            
+            //TODO: Редактирование
+
+            //TODO: добавить сюда сохранение.
+            this.Close();
 
         }
 
