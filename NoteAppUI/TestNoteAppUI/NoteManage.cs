@@ -13,17 +13,20 @@ namespace TestNoteAppUI
 {
     public partial class NoteManage : Form
     {
-        public NoteManage(Project dictionary)
+        public NoteManage(Project dictionary, int actionNumber)
         {
             InitializeComponent();
             cbCategory1.DataSource = Enum.GetValues(typeof(NoteCategory));
+
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //TODO: Добавление
             int Category = cbCategory1.SelectedIndex;
-            Note note = new Note(titleTBox.Text, textBox1.Text,(NoteCategory)Category, DateTime.Now, DateTime.Now);
+            if (Naction == 1)
+           Note note = new Note(titleTBox.Text, textBox1.Text,(NoteCategory)Category, DateTime.Now, DateTime.Now);
             
             //TODO: Редактирование
 
