@@ -46,11 +46,15 @@ namespace TestNoteAppUI
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = TitleLb.SelectedIndex;
-
+            if (TitleLb.SelectedIndex != -1)
             Titlelabel.Text = TitleLb.SelectedItem.ToString();
+
             Titlelabel.Visible = true;
             // Преобразование типов для вывода на listbox.
-            string CategoryText = _project.dictionary[selectedIndex].Category.ToString();
+            string CategoryText = "Note not selected";
+            if (TitleLb.SelectedIndex != -1)
+              CategoryText = _project.dictionary[selectedIndex].Category.ToString();
+                
             CategoryLabel.Text = CategoryText;
             CategoryLabel.Visible = true;
             // dateTimePicker1 = _project.dictionary[selectedIndex].DateofCreation;
@@ -60,6 +64,24 @@ namespace TestNoteAppUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //LoadProject();
+
+            ////Дополнительная инициализация начало.
+
+            ////Подсчёт записей в словаре.
+            //int numberОfRecords = _project.dictionary.Count;
+
+            //// string noteItem = _project.dictionary[1].Title;
+            //for (int i = 0; i != numberОfRecords; i++)
+            //{
+            //    TitleLb.Items.Insert(i, _project.dictionary[i].Title);
+            //    //  textBox.Text = _project.dictionary[1].NoteText;
+            //}
+            ////  TitleLb.Items.Insert(0, _project.dictionary[1].Title);
+            //// textBox.Text = _project.dictionary[1].NoteText;
+            //dateTimePicker1.Visible = true;
+            //dateTimePicker2.Visible = true;
+            //cbCategory.DataSource = Enum.GetValues(typeof(NoteCategory));
 
 
         }
@@ -123,6 +145,8 @@ namespace TestNoteAppUI
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             _project.dictionary.Remove(TitleLb.SelectedIndex);
+            TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
+            TitleLb.SelectedIndex = -1;
         }
         private void MainForm_FormClosed(Object sender, FormClosedEventArgs e)
         {

@@ -19,15 +19,15 @@ namespace ConsoleApp
             Project pClass = new Project();
 
             pClass.dictionary.Add(0, note);
-            pClass.dictionary.Add(1, note1);
-            pClass.dictionary.Add(2, note2);
+          //  pClass.dictionary.Add(1, note1);
+           // pClass.dictionary.Add(2, note2);
 
             ProjectManager.SaveToFile(pClass, @"d:\\text.json");
 
             Project pClass2 = new Project();
 
             
-            Console.WriteLine(ProjectManager.LoadFromFile(@"d:\\text.json").dictionary[1].Title);
+            Console.WriteLine(ProjectManager.LoadFromFile(@"d:\\text.json").dictionary[0].Title);
            
 
 
