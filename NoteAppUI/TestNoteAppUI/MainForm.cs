@@ -120,25 +120,25 @@ namespace TestNoteAppUI
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage();
+            NoteManage frm = new NoteManage(_project);
             frm.Show();
         }
 
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage();
+            NoteManage frm = new NoteManage(_project);
             frm.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage();
+            NoteManage frm = new NoteManage(_project);
             frm.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage();
+            NoteManage frm = new NoteManage(_project);
             frm.Show();
         }
 

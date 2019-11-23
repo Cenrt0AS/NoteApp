@@ -13,7 +13,7 @@ namespace TestNoteAppUI
 {
     public partial class NoteManage : Form
     {
-        public NoteManage()
+        public NoteManage(Project dictionary)
         {
             InitializeComponent();
             cbCategory1.DataSource = Enum.GetValues(typeof(NoteCategory));
