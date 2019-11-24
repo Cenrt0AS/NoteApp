@@ -19,7 +19,7 @@ namespace ConsoleApp
             Project pClass = new Project();
 
             pClass.dictionary.Add(0, note);
-          //  pClass.dictionary.Add(1, note1);
+            pClass.dictionary.Add(1, note1);
            // pClass.dictionary.Add(2, note2);
 
             ProjectManager.SaveToFile(pClass, @"d:\\text.json");
@@ -27,7 +27,7 @@ namespace ConsoleApp
             Project pClass2 = new Project();
 
             
-            Console.WriteLine(ProjectManager.LoadFromFile(@"d:\\text.json").dictionary[0].Title);
+           // Console.WriteLine(ProjectManager.LoadFromFile(@"d:\\text.json").dictionary[0].Title);
            
 
 
@@ -35,7 +35,7 @@ namespace ConsoleApp
           // dict.dictionary.Add(1, note);
 
           // Console.WriteLine(note2.Title + note2.DateofCreation);       
-            Console.ReadKey();
+            //Console.ReadKey();
             
         }
     }

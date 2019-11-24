@@ -13,6 +13,10 @@ namespace TestNoteAppUI
 {
     public partial class NoteManage : Form
     {
+
+        public Note note;
+        //TODO: На основе этого Note сделать проверку на Emty и выбрать действие для него.
+        // При Edit передаю данные в этот note.
         public NoteManage(Project dictionary, int actionNumber)
         {
             InitializeComponent();
@@ -21,24 +25,24 @@ namespace TestNoteAppUI
            
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //TODO: Добавление
-            int Category = cbCategory1.SelectedIndex;
-            //Naction = aci
-            //if (Naction == 1)
-           Note note = new Note(titleTBox.Text, textBox1.Text,(NoteCategory)Category, DateTime.Now, DateTime.Now);
-            
-            //TODO: Редактирование
-
-            //TODO: добавить сюда сохранение.
-            this.Close();
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void OKbutton_Click(object sender, EventArgs e)
+        {
+            //TODO: Добавление
+            int Category = cbCategory1.SelectedIndex;
+
+            note = new Note(titleTBox.Text, textBox1.Text, (NoteCategory)Category, DateTime.Now, DateTime.Now);
+
+            //TODO: Редактирование
+
+            //TODO: добавить сюда сохранение.                   
+            DialogResult = DialogResult.OK;
         }
     }
 }
