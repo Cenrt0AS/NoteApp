@@ -25,7 +25,8 @@ namespace TestNoteAppUI
         {
             //TODO: Добавление
             int Category = cbCategory1.SelectedIndex;
-            if (Naction == 1)
+            //Naction = aci
+            //if (Naction == 1)
            Note note = new Note(titleTBox.Text, textBox1.Text,(NoteCategory)Category, DateTime.Now, DateTime.Now);
             
             //TODO: Редактирование
