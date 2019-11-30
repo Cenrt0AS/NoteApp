@@ -41,10 +41,17 @@ namespace TestNoteAppUI
         /// </summary>
         public void TitleLBAdd()
         {
+            //TODO: Реализовать фильтр по категориям.
             // string noteItem = _project.dictionary[1].Title;
+            TitleLb.Items.Clear();
             for (int i = 0; i != _project.dictionary.Count; i++)
             {
-                TitleLb.Items.Insert(i, _project.dictionary[i].Title);
+                int n = 0; //Вспомогательная переменная описывающая индекс в позиции ListBox.
+                if (cbCategory.SelectedIndex == Convert.ToInt32(_project.dictionary[i].Category))
+                { 
+                    TitleLb.Items.Insert(n, _project.dictionary[i].Title);
+                    n++;
+                }
                 //  textBox.Text = _project.dictionary[1].NoteText;
             }
         }
@@ -87,9 +94,8 @@ namespace TestNoteAppUI
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 _project.dictionary.Add(NewNumberOfRecords(), frm.note);
-                // TitleLBAdd();
-                TitleLb.Items.Insert(_project.dictionary.Count -1, _project.dictionary[_project.dictionary.Count -1 ].Title);
-                SaveProject();
+                 TitleLBAdd();
+                 SaveProject();
             }
             
         }
@@ -103,8 +109,6 @@ namespace TestNoteAppUI
             NoteManage frm = new NoteManage(_project);
             // Переменная для хранения ключа редактирования записи.
             int selectedID = TitleLb.SelectedIndex;
-            //
-            // NoteManage frm = new NoteManage(_project, 1);
             //TODO: Еще протестировать редактирование.
             // Показ уже имеющихся данных в окне редактирования.
             //TODO: Добавить проверку на выбранную запись.
@@ -115,14 +119,14 @@ namespace TestNoteAppUI
             else
             { 
                 frm.titleTBox.Text = _project.dictionary[selectedID].Title;
-                //frm.cbCategory1.SelectedIndex = _project.dictionary[selectedID].Category;
+                frm.cbCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[selectedID].Category);
                 frm.textBox1.Text = _project.dictionary[selectedID].NoteText;
+                //TODO: Правильная работа Date.
                 frm.dateTimePicker1.Value = _project.dictionary[selectedID].DateofCreation;
                 frm.dateTimePicker2.Value = _project.dictionary[selectedID].LastmodDate;
                 if (frm.ShowDialog() == DialogResult.OK)
                     {
                         _project.dictionary[selectedID] =(frm.note);
-                        // TitleLBAdd();
                         SaveProject();
                         TitleLb.SelectedItem = (_project.dictionary[selectedID].Title);
                     }
@@ -186,20 +190,31 @@ namespace TestNoteAppUI
         private void TitleLb_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = TitleLb.SelectedIndex;
+            int selected = GetKeyByValue(TitleLb.SelectedItem.ToString());
             if (TitleLb.SelectedIndex != -1)
+            { 
+               // int indexOfDic = 
                 Titlelabel.Text = TitleLb.SelectedItem.ToString();
-
+                string CategoryText = "Note not selected";
+                CategoryText = _project.dictionary[selected].Category.ToString();
+                CategoryLabel.Text = CategoryText;
+                CategoryLabel.Visible = true;
+                textBox.Text = _project.dictionary[selected].NoteText;
+                dateTimePicker1.Value = _project.dictionary[selected].DateofCreation;
+                dateTimePicker2.Value = _project.dictionary[selected].LastmodDate;
+            }
             Titlelabel.Visible = true;
             // Преобразование типов для вывода на listbox.
-            string CategoryText = "Note not selected";
-            if (TitleLb.SelectedIndex != -1)
-                CategoryText = _project.dictionary[selectedIndex].Category.ToString();
-
-            CategoryLabel.Text = CategoryText;
-            CategoryLabel.Visible = true;
-            textBox.Text = _project.dictionary[selectedIndex].NoteText;
-            dateTimePicker1.Value = _project.dictionary[selectedIndex].DateofCreation;
-            dateTimePicker2.Value = _project.dictionary[selectedIndex].LastmodDate;
+            //string CategoryText = "Note not selected";
+            //if (TitleLb.SelectedIndex != -1)
+            // { 
+            //    CategoryText = _project.dictionary[selectedIndex].Category.ToString();
+            //    CategoryLabel.Text = CategoryText;
+            //    CategoryLabel.Visible = true;
+            //    textBox.Text = _project.dictionary[selectedIndex].NoteText;
+            //    dateTimePicker1.Value = _project.dictionary[selectedIndex].DateofCreation;
+            //    dateTimePicker2.Value = _project.dictionary[selectedIndex].LastmodDate;
+            //}
         }
 
 
@@ -225,5 +240,32 @@ namespace TestNoteAppUI
             SaveProject();
             Application.Exit();
         }
+
+        /// <summary>
+        /// Выбор категории из ComboBox, MainForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TitleLBAdd();
+        }
+
+        //TODO: Реализовать проверку вводимых данных где нибуть на IsNullOrEmpty().
+        //
+        public int GetKeyByValue(string value)
+        {
+            //foreach (_project.dictionary.title in _project.dictionary)
+            //{
+            for (int i = 0; i != _project.dictionary.Count; i++)
+            {
+                if (_project.dictionary[i].Title.Equals(value))
+                    //return _project.dictionary[i].Key;
+                    return i;
+            }
+        
+            return -1;
+        }
+
     }
 }

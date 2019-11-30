@@ -25,8 +25,6 @@ namespace TestNoteAppUI
            
         }
 
-        
-
         private void Cancelbutton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -44,5 +42,6 @@ namespace TestNoteAppUI
             //TODO: добавить сюда сохранение.                   
             DialogResult = DialogResult.OK;
         }
+
     }
 }
