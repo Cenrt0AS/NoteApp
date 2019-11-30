@@ -94,13 +94,13 @@ namespace TestNoteAppUI
             {
                 _project.dictionary[selectedID] =(frm.note);
                 // TitleLBAdd();
-                TitleLb.SelectedItem =(_project.dictionary[selectedID].Title);
                 SaveProject();
+                TitleLb.SelectedItem = (_project.dictionary[selectedID].Title);
             }
 
             //
 
-            frm.Show();
+            //frm.Show();
 
         }
 
@@ -146,6 +146,7 @@ namespace TestNoteAppUI
 
             CategoryLabel.Text = CategoryText;
             CategoryLabel.Visible = true;
+            textBox.Text = _project.dictionary[selectedIndex].NoteText;
             // dateTimePicker1 = _project.dictionary[selectedIndex].DateofCreation;
             //dateTimePicker2.
         }
