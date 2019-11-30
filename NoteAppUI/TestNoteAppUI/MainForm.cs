@@ -85,7 +85,23 @@ namespace TestNoteAppUI
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             NoteManage frm = new NoteManage(_project,2);
+            // Выбираем ключ для редактирования записи.
+            int selectedID = TitleLb.SelectedIndex;
+            //
+           // NoteManage frm = new NoteManage(_project, 1);
+           //TODO: Еще протестировать редактирование и убрать баги с окнами.
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                _project.dictionary[selectedID] =(frm.note);
+                // TitleLBAdd();
+                TitleLb.SelectedItem =(_project.dictionary[selectedID].Title);
+                SaveProject();
+            }
+
+            //
+
             frm.Show();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
