@@ -21,21 +21,25 @@ namespace TestNoteAppUI
             InitializeComponent();
             LoadProject();
             TitleLBAdd();
-
+            //Передача полю Combobox формы MainForm значений из перечисление NoteCategory.
             cbCategory.DataSource = Enum.GetValues(typeof(NoteCategory));
 
             //Дополнительная реализация конец.
         }
-
+        /// <summary>
+        /// Функция для подсчёта записей в словаре.
+        /// </summary>
+        /// <returns>Возвращает числовое значение.</returns>
         public int NewNumberOfRecords ()
         {
-            //Подсчёт записей в словаре.
             int numberОfRecords = _project.dictionary.Count;
             return numberОfRecords;
         }
 
-
-        public void TitleLBAdd ()
+        /// <summary>
+        /// Обработчик, заполняющий ListBox заголовками заметок из словаря.
+        /// </summary>
+        public void TitleLBAdd()
         {
             // string noteItem = _project.dictionary[1].Title;
             for (int i = 0; i != _project.dictionary.Count; i++)
@@ -45,7 +49,9 @@ namespace TestNoteAppUI
             }
         }
       
-
+        /// <summary>
+        /// Функция загрузки данных в программу.
+        /// </summary>
         public void LoadProject()
         {
             try
@@ -60,17 +66,23 @@ namespace TestNoteAppUI
             }
 
         }
-
+        /// <summary>
+        /// Функция сохранения записей в файл Json.
+        /// </summary>
         public void SaveProject()
         {
             ProjectManager.SaveToFile(_project, @"d:\\text.json");
         }
 
 
-
+        /// <summary>
+        /// Верхнее меню-> Добавление.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage(_project,1);
+            NoteManage frm = new NoteManage(_project);
            
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -81,57 +93,96 @@ namespace TestNoteAppUI
             }
             
         }
-
+        /// <summary>
+        /// Верхнее меню-> Редактирование.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage(_project,2);
-            // Выбираем ключ для редактирования записи.
+            NoteManage frm = new NoteManage(_project);
+            // Переменная для хранения ключа редактирования записи.
             int selectedID = TitleLb.SelectedIndex;
             //
-           // NoteManage frm = new NoteManage(_project, 1);
-           //TODO: Еще протестировать редактирование и убрать баги с окнами.
-            if (frm.ShowDialog() == DialogResult.OK)
+            // NoteManage frm = new NoteManage(_project, 1);
+            //TODO: Еще протестировать редактирование.
+            // Показ уже имеющихся данных в окне редактирования.
+            //TODO: Добавить проверку на выбранную запись.
+            if (selectedID < 0)
             {
-                _project.dictionary[selectedID] =(frm.note);
-                // TitleLBAdd();
-                SaveProject();
-                TitleLb.SelectedItem = (_project.dictionary[selectedID].Title);
+                MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
+            }
+            else
+            { 
+                frm.titleTBox.Text = _project.dictionary[selectedID].Title;
+                //frm.cbCategory1.SelectedIndex = _project.dictionary[selectedID].Category;
+                frm.textBox1.Text = _project.dictionary[selectedID].NoteText;
+                frm.dateTimePicker1.Value = _project.dictionary[selectedID].DateofCreation;
+                frm.dateTimePicker2.Value = _project.dictionary[selectedID].LastmodDate;
+                if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        _project.dictionary[selectedID] =(frm.note);
+                        // TitleLBAdd();
+                        SaveProject();
+                        TitleLb.SelectedItem = (_project.dictionary[selectedID].Title);
+                    }
             }
 
-            //
-
-            //frm.Show();
-
         }
-
+        /// <summary>
+        /// Кнопка добавление.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage(_project,1);
+            NoteManage frm = new NoteManage(_project);
             frm.Show();
         }
-
+        /// <summary>
+        /// Кнопка редактирование.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage(_project,2);
+            NoteManage frm = new NoteManage(_project);
             frm.Show();
         }
-
+        /// <summary>
+        /// Кнопка удаление.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             _project.dictionary.Remove(TitleLb.SelectedIndex);
             TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
             TitleLb.SelectedIndex = -1;
         }
+        /// <summary>
+        /// Обработчик событий при закрытии формы MainForm.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_FormClosed(Object sender, FormClosedEventArgs e)
         {
             SaveProject();
         }
-
+        /// <summary>
+        /// Верхнее меню-> Удаление.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _project.dictionary.Remove(TitleLb.SelectedIndex);
         }
-
+        /// <summary>
+        /// Обработчик который выводит данные заметки на компоненты формы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TitleLb_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = TitleLb.SelectedIndex;
@@ -147,19 +198,28 @@ namespace TestNoteAppUI
             CategoryLabel.Text = CategoryText;
             CategoryLabel.Visible = true;
             textBox.Text = _project.dictionary[selectedIndex].NoteText;
-            // dateTimePicker1 = _project.dictionary[selectedIndex].DateofCreation;
-            //dateTimePicker2.
+            dateTimePicker1.Value = _project.dictionary[selectedIndex].DateofCreation;
+            dateTimePicker2.Value = _project.dictionary[selectedIndex].LastmodDate;
         }
 
 
         //TODO:Update data???
-
+        /// <summary>
+        /// Верхнее меню ->Help->About
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutForm frm = new AboutForm();
             frm.Show();
         }
 
+        /// <summary>
+        /// Верхнее меню ->File->Exit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveProject();

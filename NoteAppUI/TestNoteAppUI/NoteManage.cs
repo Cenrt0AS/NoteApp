@@ -17,7 +17,7 @@ namespace TestNoteAppUI
         public Note note;
         //TODO: На основе этого Note сделать проверку на Emty и выбрать действие для него.
         // При Edit передаю данные в этот note.
-        public NoteManage(Project dictionary, int actionNumber)
+        public NoteManage(Project dictionary)
         {
             InitializeComponent();
             cbCategory1.DataSource = Enum.GetValues(typeof(NoteCategory));
@@ -27,7 +27,7 @@ namespace TestNoteAppUI
 
         
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Cancelbutton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
