@@ -44,12 +44,22 @@ namespace TestNoteAppUI
             //TODO: Реализовать фильтр по категориям.
             // string noteItem = _project.dictionary[1].Title;
             TitleLb.Items.Clear();
-            for (int i = 0; i != _project.dictionary.Count; i++)
+            //for (int i = 0; i != _project.dictionary.Count; i++)
+            //{
+            //    int n = 0; //Вспомогательная переменная описывающая индекс в позиции ListBox.
+            //    if (cbCategory.SelectedIndex == Convert.ToInt32(_project.dictionary[i].Category))
+            //    { 
+            //        TitleLb.Items.Insert(n, _project.dictionary[i].Title);
+            //        n++;
+            //    }
+            //    //  textBox.Text = _project.dictionary[1].NoteText;
+            //}
+            foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
             {
-                int n = 0; //Вспомогательная переменная описывающая индекс в позиции ListBox.
-                if (cbCategory.SelectedIndex == Convert.ToInt32(_project.dictionary[i].Category))
-                { 
-                    TitleLb.Items.Insert(n, _project.dictionary[i].Title);
+                int n = 0;
+                if (cbCategory.SelectedIndex == Convert.ToInt32(kvp.Value.Category))
+                {
+                    TitleLb.Items.Insert(n, kvp.Value.Title);
                     n++;
                 }
                 //  textBox.Text = _project.dictionary[1].NoteText;
@@ -93,7 +103,7 @@ namespace TestNoteAppUI
            
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                _project.dictionary.Add(NewNumberOfRecords(), frm.note);
+                _project.dictionary.Add(AvailableKey(), frm.note);
                  TitleLBAdd();
                  SaveProject();
             }
@@ -117,19 +127,22 @@ namespace TestNoteAppUI
                 MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
             }
             else
-            { 
-                frm.titleTBox.Text = _project.dictionary[selectedID].Title;
-                frm.cbCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[selectedID].Category);
-                frm.textBox1.Text = _project.dictionary[selectedID].NoteText;
+            {
+                string NoteValue = TitleLb.SelectedItem.ToString() ;
+               int OperatedKey = GetKeyByValue(NoteValue);
+                frm.titleTBox.Text = _project.dictionary[OperatedKey].Title;
+                frm.cbCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                frm.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
                 //TODO: Правильная работа Date.
-                frm.dateTimePicker1.Value = _project.dictionary[selectedID].DateofCreation;
-                frm.dateTimePicker2.Value = _project.dictionary[selectedID].LastmodDate;
+                frm.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
+                frm.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
                 if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        _project.dictionary[selectedID] =(frm.note);
+                        _project.dictionary[OperatedKey] =(frm.note);
                         SaveProject();
-                        TitleLb.SelectedItem = (_project.dictionary[selectedID].Title);
-                    }
+                        TitleLb.SelectedItem = (_project.dictionary[OperatedKey].Title);
+                    TitleLBAdd();
+                }
             }
 
         }
@@ -141,7 +154,13 @@ namespace TestNoteAppUI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             NoteManage frm = new NoteManage(_project);
-            frm.Show();
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                _project.dictionary.Add(NewNumberOfRecords(), frm.note);
+                TitleLBAdd();
+                SaveProject();
+            }
         }
         /// <summary>
         /// Кнопка редактирование.
@@ -151,7 +170,33 @@ namespace TestNoteAppUI
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             NoteManage frm = new NoteManage(_project);
-            frm.Show();
+            // Переменная для хранения ключа редактирования записи.
+            int selectedID = TitleLb.SelectedIndex;
+            //TODO: Еще протестировать редактирование.
+            // Показ уже имеющихся данных в окне редактирования.
+            //TODO: Добавить проверку на выбранную запись.
+            if (selectedID < 0)
+            {
+                MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
+            }
+            else
+            {
+                string NoteValue = TitleLb.SelectedItem.ToString();
+                int OperatedKey = GetKeyByValue(NoteValue);
+                frm.titleTBox.Text = _project.dictionary[OperatedKey].Title;
+                frm.cbCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                frm.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
+                //TODO: Правильная работа Date.
+                frm.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
+                frm.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    _project.dictionary[OperatedKey] = (frm.note);
+                    SaveProject();
+                    TitleLb.SelectedItem = (_project.dictionary[OperatedKey].Title);
+                    TitleLBAdd();
+                }
+            }
         }
         /// <summary>
         /// Кнопка удаление.
@@ -160,9 +205,11 @@ namespace TestNoteAppUI
         /// <param name="e"></param>
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            _project.dictionary.Remove(TitleLb.SelectedIndex);
-            TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
-            TitleLb.SelectedIndex = -1;
+            int operatedKey = GetKeyByValue(TitleLb.SelectedItem.ToString());
+            _project.dictionary.Remove(operatedKey);
+            //TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
+            //TitleLb.SelectedIndex = -1;
+            TitleLBAdd();
         }
         /// <summary>
         /// Обработчик событий при закрытии формы MainForm.
@@ -180,7 +227,11 @@ namespace TestNoteAppUI
         /// <param name="e"></param>
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _project.dictionary.Remove(TitleLb.SelectedIndex);
+            int operatedKey = GetKeyByValue(TitleLb.SelectedItem.ToString());
+            _project.dictionary.Remove(operatedKey);
+            //TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
+            //TitleLb.SelectedIndex = -1;
+            TitleLBAdd();
         }
         /// <summary>
         /// Обработчик который выводит данные заметки на компоненты формы..
@@ -189,11 +240,11 @@ namespace TestNoteAppUI
         /// <param name="e"></param>
         private void TitleLb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedIndex = TitleLb.SelectedIndex;
-            int selected = GetKeyByValue(TitleLb.SelectedItem.ToString());
+          //  int selectedIndex = TitleLb.SelectedIndex;
+   
             if (TitleLb.SelectedIndex != -1)
-            { 
-               // int indexOfDic = 
+            {
+                int selected = GetKeyByValue(TitleLb.SelectedItem.ToString());
                 Titlelabel.Text = TitleLb.SelectedItem.ToString();
                 string CategoryText = "Note not selected";
                 CategoryText = _project.dictionary[selected].Category.ToString();
@@ -255,17 +306,28 @@ namespace TestNoteAppUI
         //
         public int GetKeyByValue(string value)
         {
-            //foreach (_project.dictionary.title in _project.dictionary)
+            foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
             //{
-            for (int i = 0; i != _project.dictionary.Count; i++)
+            //for (int i = 0; i != _project.dictionary.Count; i++)
             {
-                if (_project.dictionary[i].Title.Equals(value))
+                if (kvp.Value.Title.Equals(value))
                     //return _project.dictionary[i].Key;
-                    return i;
+                    return kvp.Key;
             }
         
             return -1;
         }
 
+        public int AvailableKey ()
+        {
+            int i = 0;
+            foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
+            {
+                if (kvp.Key == i)
+                    i++;
+                else return i;
+            }
+            return -1;
+        }
     }
 }
