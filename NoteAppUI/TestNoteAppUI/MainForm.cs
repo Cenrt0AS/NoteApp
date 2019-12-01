@@ -41,19 +41,7 @@ namespace TestNoteAppUI
         /// </summary>
         public void TitleLBAdd()
         {
-            //TODO: Реализовать фильтр по категориям.
-            // string noteItem = _project.dictionary[1].Title;
             TitleLb.Items.Clear();
-            //for (int i = 0; i != _project.dictionary.Count; i++)
-            //{
-            //    int n = 0; //Вспомогательная переменная описывающая индекс в позиции ListBox.
-            //    if (cbCategory.SelectedIndex == Convert.ToInt32(_project.dictionary[i].Category))
-            //    { 
-            //        TitleLb.Items.Insert(n, _project.dictionary[i].Title);
-            //        n++;
-            //    }
-            //    //  textBox.Text = _project.dictionary[1].NoteText;
-            //}
             foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
             {
                 int n = 0;
@@ -119,9 +107,7 @@ namespace TestNoteAppUI
             NoteManage frm = new NoteManage(_project);
             // Переменная для хранения ключа редактирования записи.
             int selectedID = TitleLb.SelectedIndex;
-            //TODO: Еще протестировать редактирование.
             // Показ уже имеющихся данных в окне редактирования.
-            //TODO: Добавить проверку на выбранную запись.
             if (selectedID < 0)
             {
                 MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
@@ -172,9 +158,7 @@ namespace TestNoteAppUI
             NoteManage frm = new NoteManage(_project);
             // Переменная для хранения ключа редактирования записи.
             int selectedID = TitleLb.SelectedIndex;
-            //TODO: Еще протестировать редактирование.
-            // Показ уже имеющихся данных в окне редактирования.
-            //TODO: Добавить проверку на выбранную запись.
+            // Показ уже имеющихся данных в окне редактирования
             if (selectedID < 0)
             {
                 MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
@@ -205,12 +189,21 @@ namespace TestNoteAppUI
         /// <param name="e"></param>
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            int operatedKey = GetKeyByValue(TitleLb.SelectedItem.ToString());
-            _project.dictionary.Remove(operatedKey);
-            //TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
-            //TitleLb.SelectedIndex = -1;
-            TitleLBAdd();
-            SaveProject();
+            //Проверка выборки.
+            int selectedID = TitleLb.SelectedIndex;
+            if (selectedID < 0)
+            {
+                MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
+            }
+            else
+            {
+                int operatedKey = GetKeyByValue(TitleLb.SelectedItem.ToString());
+                _project.dictionary.Remove(operatedKey);
+                //TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
+                //TitleLb.SelectedIndex = -1;
+                TitleLBAdd();
+                SaveProject();
+            }
         }
         /// <summary>
         /// Обработчик событий при закрытии формы MainForm.
@@ -228,12 +221,19 @@ namespace TestNoteAppUI
         /// <param name="e"></param>
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int operatedKey = GetKeyByValue(TitleLb.SelectedItem.ToString());
-            _project.dictionary.Remove(operatedKey);
-            //TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
-            //TitleLb.SelectedIndex = -1;
-            TitleLBAdd();
-            SaveProject();
+            //Проверка выборки.
+            int selectedID = TitleLb.SelectedIndex;
+            if (selectedID < 0)
+            {
+                MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
+            }
+            else
+            {
+                int operatedKey = GetKeyByValue(TitleLb.SelectedItem.ToString());
+                _project.dictionary.Remove(operatedKey);
+                TitleLBAdd();
+                SaveProject();
+            }
         }
         /// <summary>
         /// Обработчик который выводит данные заметки на компоненты формы..
@@ -242,8 +242,6 @@ namespace TestNoteAppUI
         /// <param name="e"></param>
         private void TitleLb_SelectedIndexChanged(object sender, EventArgs e)
         {
-          //  int selectedIndex = TitleLb.SelectedIndex;
-   
             if (TitleLb.SelectedIndex != -1)
             {
                 int selected = GetKeyByValue(TitleLb.SelectedItem.ToString());
@@ -257,21 +255,7 @@ namespace TestNoteAppUI
                 dateTimePicker2.Value = _project.dictionary[selected].LastmodDate;
             }
             Titlelabel.Visible = true;
-            // Преобразование типов для вывода на listbox.
-            //string CategoryText = "Note not selected";
-            //if (TitleLb.SelectedIndex != -1)
-            // { 
-            //    CategoryText = _project.dictionary[selectedIndex].Category.ToString();
-            //    CategoryLabel.Text = CategoryText;
-            //    CategoryLabel.Visible = true;
-            //    textBox.Text = _project.dictionary[selectedIndex].NoteText;
-            //    dateTimePicker1.Value = _project.dictionary[selectedIndex].DateofCreation;
-            //    dateTimePicker2.Value = _project.dictionary[selectedIndex].LastmodDate;
-            //}
         }
-
-
-        //TODO:Update data???
         /// <summary>
         /// Верхнее меню ->Help->About
         /// </summary>
@@ -303,17 +287,11 @@ namespace TestNoteAppUI
         {
             TitleLBAdd();
         }
-
-        //TODO: Реализовать проверку вводимых данных где нибуть на IsNullOrEmpty().
-        //
         public int GetKeyByValue(string value)
         {
-            foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
-            //{
-            //for (int i = 0; i != _project.dictionary.Count; i++)
+            foreach (KeyValuePair<int, Note> kvp in _project.dictionary) 
             {
                 if (kvp.Value.Title.Equals(value))
-                    //return _project.dictionary[i].Key;
                     return kvp.Key;
             }
         

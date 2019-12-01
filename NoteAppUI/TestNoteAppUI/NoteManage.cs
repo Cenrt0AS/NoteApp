@@ -15,14 +15,10 @@ namespace TestNoteAppUI
     {
 
         public Note note;
-        //TODO: На основе этого Note сделать проверку на Emty и выбрать действие для него.
-        // При Edit передаю данные в этот note.
         public NoteManage(Project dictionary)
         {
             InitializeComponent();
             cbCategory1.DataSource = Enum.GetValues(typeof(NoteCategory));
-
-           
         }
 
         private void Cancelbutton_Click(object sender, EventArgs e)
@@ -32,14 +28,8 @@ namespace TestNoteAppUI
 
         private void OKbutton_Click(object sender, EventArgs e)
         {
-            //TODO: Добавление
             int Category = cbCategory1.SelectedIndex;
-
-            note = new Note(titleTBox.Text, textBox1.Text, (NoteCategory)Category, DateTime.Now, DateTime.Now);
-
-            //TODO: Редактирование
-
-            //TODO: добавить сюда сохранение.                   
+            note = new Note(titleTBox.Text, textBox1.Text, (NoteCategory)Category, DateTime.Now, DateTime.Now);                  
             DialogResult = DialogResult.OK;
         }
 
