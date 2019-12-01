@@ -124,10 +124,12 @@ namespace TestNoteAppUI
                 frm.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
                 if (frm.ShowDialog() == DialogResult.OK)
                     {
+                        DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
+                        frm.note.DateofCreation = KeepDate;
                         _project.dictionary[OperatedKey] =(frm.note);
                         SaveProject();
                         TitleLb.SelectedItem = (_project.dictionary[OperatedKey].Title);
-                    TitleLBAdd();
+                        TitleLBAdd();
                 }
             }
 
