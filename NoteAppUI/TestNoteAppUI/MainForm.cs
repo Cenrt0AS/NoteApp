@@ -210,6 +210,7 @@ namespace TestNoteAppUI
             //TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
             //TitleLb.SelectedIndex = -1;
             TitleLBAdd();
+            SaveProject();
         }
         /// <summary>
         /// Обработчик событий при закрытии формы MainForm.
@@ -232,6 +233,7 @@ namespace TestNoteAppUI
             //TitleLb.Items.RemoveAt(TitleLb.SelectedIndex);
             //TitleLb.SelectedIndex = -1;
             TitleLBAdd();
+            SaveProject();
         }
         /// <summary>
         /// Обработчик который выводит данные заметки на компоненты формы..
