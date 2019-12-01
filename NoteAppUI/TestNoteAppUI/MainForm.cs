@@ -183,7 +183,7 @@ namespace TestNoteAppUI
             _project.dictionary.Remove(TitleLb.SelectedIndex);
         }
         /// <summary>
-        /// Обработчик который выводит данные заметки на компоненты формы.
+        /// Обработчик который выводит данные заметки на компоненты формы..
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
