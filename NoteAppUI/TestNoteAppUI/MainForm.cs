@@ -160,7 +160,7 @@ namespace TestNoteAppUI
             NoteManage frm = new NoteManage(_project);
             // Переменная для хранения ключа редактирования записи.
             int selectedID = TitleLb.SelectedIndex;
-            // Показ уже имеющихся данных в окне редактирования
+            // Показ уже имеющихся данных в окне редактирования.
             if (selectedID < 0)
             {
                 MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
@@ -177,6 +177,8 @@ namespace TestNoteAppUI
                 frm.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
+                    DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
+                    frm.note.DateofCreation = KeepDate;
                     _project.dictionary[OperatedKey] = (frm.note);
                     SaveProject();
                     TitleLb.SelectedItem = (_project.dictionary[OperatedKey].Title);
