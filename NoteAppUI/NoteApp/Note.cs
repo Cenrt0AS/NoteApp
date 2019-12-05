@@ -58,10 +58,8 @@ namespace NoteApp
                     _title = value;
                     LastmodDate = DateTime.Now;
                 }
-
                 else
                     throw new ArgumentException();
-            
             }
 
         }
