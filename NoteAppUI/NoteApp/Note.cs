@@ -56,7 +56,6 @@ namespace NoteApp
                 if (value.Length < 50)
                 {
                     _title = value;
-                    //TODO: Mofified Date.
                     LastmodDate = DateTime.Now;
                 }
 
