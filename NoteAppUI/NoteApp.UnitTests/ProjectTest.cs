@@ -20,7 +20,7 @@ namespace NoteApp.UnitTests
         {
 
             var expected = "Заголовок";
-            var note = new Note();
+            var note = new Note(); //?
             note.Title = expected;
             var actual = note.Title;
 
