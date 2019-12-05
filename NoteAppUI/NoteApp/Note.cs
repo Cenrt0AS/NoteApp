@@ -38,7 +38,7 @@ namespace NoteApp
         /// <param name="lastmodDate"> Поле Дата изменения заметки</param>
         public Note(string title, string noteText, NoteCategory category, DateTime dateofCreation, DateTime lastmodDate)
         {
-            Title = title; //
+            Title = title; 
             NoteText = noteText;
             Category = category;
             DateofCreation = dateofCreation;

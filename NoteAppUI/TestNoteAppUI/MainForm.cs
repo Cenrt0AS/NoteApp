@@ -20,9 +20,9 @@ namespace TestNoteAppUI
         {
             InitializeComponent();
             LoadProject();
-            TitleLBAdd();
+            TitleListboxAdd();
             //Передача полю Combobox формы MainForm значений из перечисление NoteCategory.
-            cbCategory.DataSource = Enum.GetValues(typeof(NoteCategory));
+            ComoBoxCategory.DataSource = Enum.GetValues(typeof(NoteCategory));
 
             //Дополнительная реализация конец.
         }
@@ -39,20 +39,17 @@ namespace TestNoteAppUI
         /// <summary>
         /// Обработчик, заполняющий ListBox заголовками заметок из словаря.
         /// </summary>
-        //TODO: titeleLB&???
-        public void TitleLBAdd()
+        public void TitleListboxAdd()
         {
-            TitleLb.Items.Clear();
+            TitleListbox.Items.Clear();
             foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
             {
-                //TODO: n всегда равен 1 или 0
                 int n = 0;
-                if (cbCategory.SelectedIndex == Convert.ToInt32(kvp.Value.Category))
+                if (ComoBoxCategory.SelectedIndex == Convert.ToInt32(kvp.Value.Category))
                 {
-                    TitleLb.Items.Insert(n, kvp.Value.Title);
+                    TitleListbox.Items.Insert(n, kvp.Value.Title);
                     n++;
                 }
-                //  textBox.Text = _project.dictionary[1].NoteText;
             }
         }
       
@@ -85,13 +82,12 @@ namespace TestNoteAppUI
         /// </summary>
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: frm???
-            NoteManage frm = new NoteManage(_project);
+            NoteManage form = new NoteManage(_project);
            
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (form.ShowDialog() == DialogResult.OK)
             {
-                _project.dictionary.Add(AvailableKey(), frm.note);
-                 TitleLBAdd();
+                _project.dictionary.Add(AvailableKey(), form.note);
+                TitleListboxAdd();
                  SaveProject();
             }           
         }
@@ -101,9 +97,9 @@ namespace TestNoteAppUI
         /// </summary>
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage(_project);
+            NoteManage form = new NoteManage(_project);
             // Переменная для хранения ключа редактирования записи.
-            int selectedID = TitleLb.SelectedIndex;
+            int selectedID = TitleListbox.SelectedIndex;
             // Показ уже имеющихся данных в окне редактирования.
             if (selectedID < 0)
             {
@@ -111,22 +107,21 @@ namespace TestNoteAppUI
             }
             else
             {
-                string NoteValue = TitleLb.SelectedItem.ToString();
+                string NoteValue = TitleListbox.SelectedItem.ToString();
                 int OperatedKey = GetKeyByValue(NoteValue);
-                frm.titleTBox.Text = _project.dictionary[OperatedKey].Title;
-                frm.cbCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
-                frm.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
-                //TODO: Правильная работа Date.
-                frm.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
-                frm.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
-                if (frm.ShowDialog() == DialogResult.OK)
+                form.titleTBox.Text = _project.dictionary[OperatedKey].Title;
+                form.ComboBoxCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                form.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
+                form.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
+                form.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
+                if (form.ShowDialog() == DialogResult.OK)
                 {
                     DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
-                    frm.note.DateofCreation = KeepDate;
-                    _project.dictionary[OperatedKey] =(frm.note);
+                    form.note.DateofCreation = KeepDate;
+                    _project.dictionary[OperatedKey] =(form.note);
                     SaveProject();
-                    TitleLb.SelectedItem = (_project.dictionary[OperatedKey].Title);
-                    TitleLBAdd();
+                    TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
+                    TitleListboxAdd();
                 }
             }
         }
@@ -136,12 +131,12 @@ namespace TestNoteAppUI
         /// </summary>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage(_project);
+            NoteManage form = new NoteManage(_project);
 
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (form.ShowDialog() == DialogResult.OK)
             {
-                _project.dictionary.Add(NewNumberOfRecords(), frm.note);
-                TitleLBAdd();
+                _project.dictionary.Add(NewNumberOfRecords(), form.note);
+                TitleListboxAdd();
                 SaveProject();
             }
         }
@@ -151,9 +146,9 @@ namespace TestNoteAppUI
         /// </summary>
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            NoteManage frm = new NoteManage(_project);
+            NoteManage form = new NoteManage(_project);
             // Переменная для хранения ключа редактирования записи.
-            int selectedID = TitleLb.SelectedIndex;
+            int selectedID = TitleListbox.SelectedIndex;
             // Показ уже имеющихся данных в окне редактирования.
             if (selectedID < 0)
             {
@@ -161,22 +156,21 @@ namespace TestNoteAppUI
             }
             else
             {
-                string NoteValue = TitleLb.SelectedItem.ToString();
+                string NoteValue = TitleListbox.SelectedItem.ToString();
                 int OperatedKey = GetKeyByValue(NoteValue);
-                frm.titleTBox.Text = _project.dictionary[OperatedKey].Title;
-                frm.cbCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
-                frm.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
-                //TODO: Правильная работа Date.
-                frm.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
-                frm.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
-                if (frm.ShowDialog() == DialogResult.OK)
+                form.titleTBox.Text = _project.dictionary[OperatedKey].Title;
+                form.ComboBoxCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                form.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
+                form.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
+                form.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
+                if (form.ShowDialog() == DialogResult.OK)
                 {
                     DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
-                    frm.note.DateofCreation = KeepDate;
-                    _project.dictionary[OperatedKey] = (frm.note);
+                    form.note.DateofCreation = KeepDate;
+                    _project.dictionary[OperatedKey] = (form.note);
                     SaveProject();
-                    TitleLb.SelectedItem = (_project.dictionary[OperatedKey].Title);
-                    TitleLBAdd();
+                    TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
+                    TitleListboxAdd();
                 }
             }
         }
@@ -186,16 +180,16 @@ namespace TestNoteAppUI
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             //Проверка выборки.
-            int selectedID = TitleLb.SelectedIndex;
+            int selectedID = TitleListbox.SelectedIndex;
             if (selectedID < 0)
             {
                 MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
             }
             else
             {
-                int operatedKey = GetKeyByValue(TitleLb.SelectedItem.ToString());
+                int operatedKey = GetKeyByValue(TitleListbox.SelectedItem.ToString());
                 _project.dictionary.Remove(operatedKey);
-                TitleLBAdd();
+                TitleListboxAdd();
                 SaveProject();
             }
         }
@@ -214,16 +208,16 @@ namespace TestNoteAppUI
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Проверка выборки.
-            int selectedID = TitleLb.SelectedIndex;
+            int selectedID = TitleListbox.SelectedIndex;
             if (selectedID < 0)
             {
                 MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
             }
             else
             {
-                int operatedKey = GetKeyByValue(TitleLb.SelectedItem.ToString());
+                int operatedKey = GetKeyByValue(TitleListbox.SelectedItem.ToString());
                 _project.dictionary.Remove(operatedKey);
-                TitleLBAdd();
+                TitleListboxAdd();
                 SaveProject();
             }
         }
@@ -233,10 +227,10 @@ namespace TestNoteAppUI
         /// </summary>
         private void TitleLb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TitleLb.SelectedIndex != -1)
+            if (TitleListbox.SelectedIndex != -1)
             {
-                int selected = GetKeyByValue(TitleLb.SelectedItem.ToString());
-                Titlelabel.Text = TitleLb.SelectedItem.ToString();
+                int selected = GetKeyByValue(TitleListbox.SelectedItem.ToString());
+                Titlelabel.Text = TitleListbox.SelectedItem.ToString();
                 string CategoryText = "Note not selected";
                 CategoryText = _project.dictionary[selected].Category.ToString();
                 CategoryLabel.Text = CategoryText;
@@ -250,16 +244,16 @@ namespace TestNoteAppUI
         /// <summary>
         /// Верхнее меню ->Help->About
         /// </summary>
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutForm frm = new AboutForm();
-            frm.Show();
+            AboutForm form = new AboutForm();
+            form.Show();
         }
 
         /// <summary>
         /// Верхнее меню ->File->Exit
         /// </summary>
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveProject();
             Application.Exit();
@@ -268,11 +262,16 @@ namespace TestNoteAppUI
         /// <summary>
         /// Выбор категории из ComboBox, MainForm
         /// </summary>
-        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TitleLBAdd();
+            TitleListboxAdd();
         }
 
+        /// <summary>
+        /// Функция которая находить ключ по значению. 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>Возвращает индекс ключа</returns>
         public int GetKeyByValue(string value)
         {
             foreach (KeyValuePair<int, Note> kvp in _project.dictionary) 
@@ -283,7 +282,10 @@ namespace TestNoteAppUI
         
             return -1;
         }
-
+        /// <summary>
+        /// Функция, которая проверяет доступность ключа в словаре.
+        /// </summary>
+        /// <returns>Возвращает индекс доступного ключа.</returns>
         public int AvailableKey ()
         {
             int i = 0;

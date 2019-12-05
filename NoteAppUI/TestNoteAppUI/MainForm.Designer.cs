@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.TitleLb = new System.Windows.Forms.ListBox();
+            this.TitleListbox = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +41,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.Captionlabel = new System.Windows.Forms.Label();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.ComoBoxCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.AddPb = new System.Windows.Forms.PictureBox();
@@ -59,17 +59,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.RemovePb)).BeginInit();
             this.SuspendLayout();
             // 
-            // TitleLb
+            // TitleListbox
             // 
-            this.TitleLb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TitleListbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TitleLb.FormattingEnabled = true;
-            this.TitleLb.Location = new System.Drawing.Point(24, 97);
-            this.TitleLb.Name = "TitleLb";
-            this.TitleLb.Size = new System.Drawing.Size(120, 186);
-            this.TitleLb.TabIndex = 1;
-            this.TitleLb.SelectedIndexChanged += new System.EventHandler(this.TitleLb_SelectedIndexChanged);
+            this.TitleListbox.FormattingEnabled = true;
+            this.TitleListbox.Location = new System.Drawing.Point(24, 97);
+            this.TitleListbox.Name = "TitleListbox";
+            this.TitleListbox.Size = new System.Drawing.Size(120, 186);
+            this.TitleListbox.TabIndex = 1;
+            this.TitleListbox.SelectedIndexChanged += new System.EventHandler(this.TitleLb_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -96,7 +96,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -111,21 +111,21 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -142,7 +142,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -163,15 +163,15 @@
             this.Captionlabel.TabIndex = 4;
             this.Captionlabel.Text = "Заметка:";
             // 
-            // cbCategory
+            // ComoBoxCategory
             // 
-            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(98, 33);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(121, 21);
-            this.cbCategory.TabIndex = 5;
-            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            this.ComoBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComoBoxCategory.FormattingEnabled = true;
+            this.ComoBoxCategory.Location = new System.Drawing.Point(98, 33);
+            this.ComoBoxCategory.Name = "ComoBoxCategory";
+            this.ComoBoxCategory.Size = new System.Drawing.Size(121, 21);
+            this.ComoBoxCategory.TabIndex = 5;
+            this.ComoBoxCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCategory_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -299,10 +299,10 @@
             this.Controls.Add(this.AddPb);
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.ComoBoxCategory);
             this.Controls.Add(this.Captionlabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TitleLb);
+            this.Controls.Add(this.TitleListbox);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
             this.Text = "NoteApp";
@@ -317,7 +317,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ListBox TitleLb;
+        private System.Windows.Forms.ListBox TitleListbox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -329,7 +329,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Captionlabel;
-        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.ComboBox ComoBoxCategory;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label CategoryLabel;
         private System.Windows.Forms.PictureBox AddPb;

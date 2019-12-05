@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.titleTBox = new System.Windows.Forms.TextBox();
-            this.cbCategory1 = new System.Windows.Forms.ComboBox();
+            this.ComboBoxCategory1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -75,14 +75,14 @@
             this.titleTBox.Size = new System.Drawing.Size(234, 20);
             this.titleTBox.TabIndex = 3;
             // 
-            // cbCategory1
+            // ComboBoxCategory1
             // 
-            this.cbCategory1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategory1.FormattingEnabled = true;
-            this.cbCategory1.Location = new System.Drawing.Point(70, 54);
-            this.cbCategory1.Name = "cbCategory1";
-            this.cbCategory1.Size = new System.Drawing.Size(112, 21);
-            this.cbCategory1.TabIndex = 4;
+            this.ComboBoxCategory1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxCategory1.FormattingEnabled = true;
+            this.ComboBoxCategory1.Location = new System.Drawing.Point(70, 54);
+            this.ComboBoxCategory1.Name = "ComboBoxCategory1";
+            this.ComboBoxCategory1.Size = new System.Drawing.Size(112, 21);
+            this.ComboBoxCategory1.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
@@ -156,7 +156,7 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.cbCategory1);
+            this.Controls.Add(this.ComboBoxCategory1);
             this.Controls.Add(this.titleTBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -175,7 +175,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox titleTBox;
-        public System.Windows.Forms.ComboBox cbCategory1;
+        public System.Windows.Forms.ComboBox ComboBoxCategory1;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.DateTimePicker dateTimePicker2;

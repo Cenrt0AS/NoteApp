@@ -18,7 +18,7 @@ namespace TestNoteAppUI
         public NoteManage(Project dictionary)
         {
             InitializeComponent();
-            cbCategory1.DataSource = Enum.GetValues(typeof(NoteCategory));
+            ComboBoxCategory1.DataSource = Enum.GetValues(typeof(NoteCategory));
         }
 
         private void Cancelbutton_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace TestNoteAppUI
 
         private void OKbutton_Click(object sender, EventArgs e)
         {
-            int Category = cbCategory1.SelectedIndex;
+            int Category = ComboBoxCategory1.SelectedIndex;
             note = new Note(titleTBox.Text, textBox1.Text, (NoteCategory)Category, DateTime.Now, DateTime.Now);                  
             DialogResult = DialogResult.OK;
         }
