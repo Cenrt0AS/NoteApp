@@ -28,15 +28,6 @@ namespace TestNoteAppUI
         }
 
         /// <summary>
-        /// Функция для подсчёта записей в словаре.
-        /// </summary>
-        public int NewNumberOfRecords ()
-        {
-            int numberОfRecords = _project.dictionary.Count;
-            return numberОfRecords;
-        }
-
-        /// <summary>
         /// Обработчик, заполняющий ListBox заголовками заметок из словаря.
         /// </summary>
         public void TitleListboxAdd()
@@ -123,74 +114,6 @@ namespace TestNoteAppUI
                     TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
                     TitleListboxAdd();
                 }
-            }
-        }
-
-        /// <summary>
-        /// Кнопка добавление.
-        /// </summary>
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            NoteManage form = new NoteManage(_project);
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                _project.dictionary.Add(NewNumberOfRecords(), form.note);
-                TitleListboxAdd();
-                SaveProject();
-            }
-        }
-
-        /// <summary>
-        /// Кнопка редактирование.
-        /// </summary>
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            NoteManage form = new NoteManage(_project);
-            // Переменная для хранения ключа редактирования записи.
-            int selectedID = TitleListbox.SelectedIndex;
-            // Показ уже имеющихся данных в окне редактирования.
-            if (selectedID < 0)
-            {
-                MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
-            }
-            else
-            {
-                string NoteValue = TitleListbox.SelectedItem.ToString();
-                int OperatedKey = GetKeyByValue(NoteValue);
-                form.titleTBox.Text = _project.dictionary[OperatedKey].Title;
-                form.ComboBoxCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
-                form.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
-                form.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
-                form.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
-                    form.note.DateofCreation = KeepDate;
-                    _project.dictionary[OperatedKey] = (form.note);
-                    SaveProject();
-                    TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
-                    TitleListboxAdd();
-                }
-            }
-        }
-        /// <summary>
-        /// Кнопка удаление.
-        /// </summary>
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            //Проверка выборки.
-            int selectedID = TitleListbox.SelectedIndex;
-            if (selectedID < 0)
-            {
-                MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
-            }
-            else
-            {
-                int operatedKey = GetKeyByValue(TitleListbox.SelectedItem.ToString());
-                _project.dictionary.Remove(operatedKey);
-                TitleListboxAdd();
-                SaveProject();
             }
         }
 
@@ -297,5 +220,79 @@ namespace TestNoteAppUI
             }
             return -1;
         }
+
+        /// <summary>
+        /// Кнопка добавление.
+        /// </summary>
+        private void AddNoteButton_Click(object sender, EventArgs e)
+        {
+            NoteManage form = new NoteManage(_project);
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                _project.dictionary.Add(_project.dictionary.Count, form.note);
+                TitleListboxAdd();
+                SaveProject();
+            }
+        }
+        /// <summary>
+        /// Кнопка добавление.
+        /// </summary>
+        private void EditNoteButton_Click(object sender, EventArgs e)
+        {
+            NoteManage form = new NoteManage(_project);
+            // Переменная для хранения ключа редактирования записи.
+            int selectedID = TitleListbox.SelectedIndex;
+            // Показ уже имеющихся данных в окне редактирования.
+            if (selectedID < 0)
+            {
+                MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
+            }
+            else
+            {
+                string NoteValue = TitleListbox.SelectedItem.ToString();
+                int OperatedKey = GetKeyByValue(NoteValue);
+                form.titleTBox.Text = _project.dictionary[OperatedKey].Title;
+                form.ComboBoxCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                form.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
+                form.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
+                form.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
+                    form.note.DateofCreation = KeepDate;
+                    _project.dictionary[OperatedKey] = (form.note);
+                    SaveProject();
+                    TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
+                    TitleListboxAdd();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Кнопка удаление.
+        /// </summary>
+        private void RemoveNoteButton_Click(object sender, EventArgs e)
+        {
+            //Проверка выборки.
+            int selectedID = TitleListbox.SelectedIndex;
+            if (selectedID < 0)
+            {
+                MessageBox.Show("Выберите пожайлуста заметку!", "Ошибка", MessageBoxButtons.OK);
+            }
+            else
+            {
+                int operatedKey = GetKeyByValue(TitleListbox.SelectedItem.ToString());
+                _project.dictionary.Remove(operatedKey);
+                TitleListboxAdd();
+                SaveProject();
+            }
+        }
+
+
+
+        //TODO: Реализовать взаместо PictureBox Buttons
+        //TODO: Переименовать функции, глагол впереди.
     }
+
 }

@@ -15,6 +15,7 @@ namespace TestNoteAppUI
     {
 
         public Note note;
+        //TODO: Реализовать геттер и сеттер и через них передавать данные в компоненты.
         public NoteManage(Project dictionary)
         {
             InitializeComponent();

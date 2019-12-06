@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TitleListbox = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,19 +43,16 @@
             this.ComoBoxCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CategoryLabel = new System.Windows.Forms.Label();
-            this.AddPb = new System.Windows.Forms.PictureBox();
-            this.EditPb = new System.Windows.Forms.PictureBox();
-            this.RemovePb = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.Titlelabel = new System.Windows.Forms.Label();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.AddNoteButton = new System.Windows.Forms.Button();
+            this.EditNoteButton = new System.Windows.Forms.Button();
+            this.RemoveNoteButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddPb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EditPb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RemovePb)).BeginInit();
             this.SuspendLayout();
             // 
             // TitleListbox
@@ -88,7 +84,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -105,27 +101,27 @@
             this.editToolStripMenuItem1,
             this.removeToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -134,13 +130,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -191,39 +187,6 @@
             this.CategoryLabel.TabIndex = 7;
             this.CategoryLabel.Text = "label4";
             this.CategoryLabel.Visible = false;
-            // 
-            // AddPb
-            // 
-            this.AddPb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddPb.Image = ((System.Drawing.Image)(resources.GetObject("AddPb.Image")));
-            this.AddPb.Location = new System.Drawing.Point(12, 376);
-            this.AddPb.Name = "AddPb";
-            this.AddPb.Size = new System.Drawing.Size(18, 21);
-            this.AddPb.TabIndex = 8;
-            this.AddPb.TabStop = false;
-            this.AddPb.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // EditPb
-            // 
-            this.EditPb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.EditPb.Image = ((System.Drawing.Image)(resources.GetObject("EditPb.Image")));
-            this.EditPb.Location = new System.Drawing.Point(37, 376);
-            this.EditPb.Name = "EditPb";
-            this.EditPb.Size = new System.Drawing.Size(20, 21);
-            this.EditPb.TabIndex = 9;
-            this.EditPb.TabStop = false;
-            this.EditPb.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // RemovePb
-            // 
-            this.RemovePb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RemovePb.Image = ((System.Drawing.Image)(resources.GetObject("RemovePb.Image")));
-            this.RemovePb.Location = new System.Drawing.Point(64, 376);
-            this.RemovePb.Name = "RemovePb";
-            this.RemovePb.Size = new System.Drawing.Size(15, 21);
-            this.RemovePb.TabIndex = 10;
-            this.RemovePb.TabStop = false;
-            this.RemovePb.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label5
             // 
@@ -283,20 +246,50 @@
             this.textBox.Size = new System.Drawing.Size(396, 261);
             this.textBox.TabIndex = 17;
             // 
+            // AddNoteButton
+            // 
+            this.AddNoteButton.Location = new System.Drawing.Point(15, 311);
+            this.AddNoteButton.Name = "AddNoteButton";
+            this.AddNoteButton.Size = new System.Drawing.Size(106, 23);
+            this.AddNoteButton.TabIndex = 18;
+            this.AddNoteButton.Text = "Добавление";
+            this.AddNoteButton.UseVisualStyleBackColor = true;
+            this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
+            // 
+            // EditNoteButton
+            // 
+            this.EditNoteButton.Location = new System.Drawing.Point(15, 340);
+            this.EditNoteButton.Name = "EditNoteButton";
+            this.EditNoteButton.Size = new System.Drawing.Size(106, 23);
+            this.EditNoteButton.TabIndex = 19;
+            this.EditNoteButton.Text = "Редактирование";
+            this.EditNoteButton.UseVisualStyleBackColor = true;
+            this.EditNoteButton.Click += new System.EventHandler(this.EditNoteButton_Click);
+            // 
+            // RemoveNoteButton
+            // 
+            this.RemoveNoteButton.Location = new System.Drawing.Point(15, 369);
+            this.RemoveNoteButton.Name = "RemoveNoteButton";
+            this.RemoveNoteButton.Size = new System.Drawing.Size(106, 23);
+            this.RemoveNoteButton.TabIndex = 20;
+            this.RemoveNoteButton.Text = "Удаление";
+            this.RemoveNoteButton.UseVisualStyleBackColor = true;
+            this.RemoveNoteButton.Click += new System.EventHandler(this.RemoveNoteButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 420);
+            this.Controls.Add(this.RemoveNoteButton);
+            this.Controls.Add(this.EditNoteButton);
+            this.Controls.Add(this.AddNoteButton);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.Titlelabel);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.RemovePb);
-            this.Controls.Add(this.EditPb);
-            this.Controls.Add(this.AddPb);
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ComoBoxCategory);
@@ -305,12 +298,10 @@
             this.Controls.Add(this.TitleListbox);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NoteApp";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddPb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EditPb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RemovePb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,15 +323,15 @@
         private System.Windows.Forms.ComboBox ComoBoxCategory;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label CategoryLabel;
-        private System.Windows.Forms.PictureBox AddPb;
-        private System.Windows.Forms.PictureBox EditPb;
-        private System.Windows.Forms.PictureBox RemovePb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label Titlelabel;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.Button AddNoteButton;
+        private System.Windows.Forms.Button EditNoteButton;
+        private System.Windows.Forms.Button RemoveNoteButton;
     }
 }
 

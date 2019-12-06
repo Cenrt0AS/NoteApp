@@ -162,6 +162,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "NoteManage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Note";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -174,13 +175,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox titleTBox;
-        public System.Windows.Forms.ComboBox ComboBoxCategory1;
-        public System.Windows.Forms.DateTimePicker dateTimePicker1;
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox titleTBox;
+        private System.Windows.Forms.ComboBox ComboBoxCategory1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button Cancelbutton;
         private System.Windows.Forms.Button OKbutton;
-        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
