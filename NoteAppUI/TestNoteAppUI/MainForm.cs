@@ -30,7 +30,7 @@ namespace TestNoteAppUI
 
         /// <summary>
         /// Обработчик, заполняющий ListBox заголовками заметок из словаря.
-        /// </summary>
+        /// </summary>Load
         public void TitleListboxAdd()
         {
             TitleListbox.Items.Clear();

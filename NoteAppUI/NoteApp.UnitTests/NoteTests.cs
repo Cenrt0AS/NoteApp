@@ -27,7 +27,7 @@ namespace NoteApp.UnitTests
             Assert.AreEqual(expected, actual, "Геттер Title возвращает неправильный заголовок.");
         }
         [Test(Description = "Позитивный тест cеттера Tittle")]
-        public void TestTitleSet_CorrectValue()
+        public void TestNoteTitleSet_CorrectValue()
         {
             var expected = "Заголовок_заметки";
             var note = new Note("Заголовок_заметки", "", NoteCategory.Docs, DateTime.Now, DateTime.Now);
@@ -36,13 +36,21 @@ namespace NoteApp.UnitTests
         }
 
         [Test(Description = "Негативный тест cеттера Tittle, присваивание более 50 значений.")]
-        public void TestTitleSet_BadValue()
+        public void TestNoteTitleSet_BadValue()
         {
-            //var expected = "Заголовок_заметки";
+           
             var wrongTitle = "123456789101112113142412412424214214214kkmkkmkmkkmkmkmkjnuniunu21421432435435423523432532534523523532532523";
             var note = new Note(wrongTitle, "", NoteCategory.Docs, DateTime.Now, DateTime.Now);
             Assert.Throws<ArgumentException>(
                 () => { note.Title = wrongTitle; }, "Должно возникать исключение, если значение длинее 50 символов.");
+        }
+        [Test(Description = "Позитивный тест cеттера NoteText")]
+        public void TestNoteTextSet_CorrectValue()
+        {
+            var expected = "Заголовок_заметки";
+            var note = new Note("Заголовок_заметки", "12313", NoteCategory.Docs, DateTime.Now, DateTime.Now);
+            note.NoteText = expected;
+            Assert.AreEqual(expected, note.Title, "Cеттер NoteText  устанавливает неправильное значение.");
         }
     }
 }
