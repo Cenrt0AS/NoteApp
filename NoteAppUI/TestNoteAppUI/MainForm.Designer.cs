@@ -242,10 +242,10 @@
             this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox.Location = new System.Drawing.Point(306, 136);
+            this.textBox.Location = new System.Drawing.Point(292, 147);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(396, 261);
+            this.textBox.Size = new System.Drawing.Size(410, 261);
             this.textBox.TabIndex = 17;
             // 
             // AddNoteButton

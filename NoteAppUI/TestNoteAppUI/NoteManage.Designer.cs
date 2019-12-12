@@ -62,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 91);
+            this.label3.Location = new System.Drawing.Point(12, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             this.titleTBox.Location = new System.Drawing.Point(70, 19);
             this.titleTBox.Name = "titleTBox";
-            this.titleTBox.Size = new System.Drawing.Size(234, 20);
+            this.titleTBox.Size = new System.Drawing.Size(350, 20);
             this.titleTBox.TabIndex = 3;
             // 
             // ComboBoxCategory1
@@ -81,13 +81,13 @@
             this.ComboBoxCategory1.FormattingEnabled = true;
             this.ComboBoxCategory1.Location = new System.Drawing.Point(70, 54);
             this.ComboBoxCategory1.Name = "ComboBoxCategory1";
-            this.ComboBoxCategory1.Size = new System.Drawing.Size(112, 21);
+            this.ComboBoxCategory1.Size = new System.Drawing.Size(133, 21);
             this.ComboBoxCategory1.TabIndex = 4;
             // 
             // createdDateTimePicker
             // 
             this.createdDateTimePicker.Enabled = false;
-            this.createdDateTimePicker.Location = new System.Drawing.Point(65, 91);
+            this.createdDateTimePicker.Location = new System.Drawing.Point(65, 97);
             this.createdDateTimePicker.Name = "createdDateTimePicker";
             this.createdDateTimePicker.Size = new System.Drawing.Size(138, 20);
             this.createdDateTimePicker.TabIndex = 5;
@@ -95,7 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(209, 91);
+            this.label4.Location = new System.Drawing.Point(209, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 6;
@@ -104,7 +104,7 @@
             // modifiedDateTimePicker
             // 
             this.modifiedDateTimePicker.Enabled = false;
-            this.modifiedDateTimePicker.Location = new System.Drawing.Point(272, 91);
+            this.modifiedDateTimePicker.Location = new System.Drawing.Point(265, 97);
             this.modifiedDateTimePicker.Name = "modifiedDateTimePicker";
             this.modifiedDateTimePicker.Size = new System.Drawing.Size(139, 20);
             this.modifiedDateTimePicker.TabIndex = 7;

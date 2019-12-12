@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TestNoteAppUI
 {
@@ -51,7 +52,7 @@ namespace TestNoteAppUI
         {
             try
             {
-                string defaultPath = @"d:\\text.json";
+                string defaultPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes\\Notes.json");
                 _project = ProjectManager.LoadFromFile(defaultPath);
             }
             catch
@@ -65,7 +66,10 @@ namespace TestNoteAppUI
         /// </summary>
         public void SaveProject()
         {
-            ProjectManager.SaveToFile(_project, @"d:\\text.json");
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes")))
+                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes"));
+            ProjectManager.SaveToFile(_project, (Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes\\Notes.json")));
         }
 
         /// <summary>
