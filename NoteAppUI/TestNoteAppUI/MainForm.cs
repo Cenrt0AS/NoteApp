@@ -100,11 +100,11 @@ namespace TestNoteAppUI
             {
                 string NoteValue = TitleListbox.SelectedItem.ToString();
                 int OperatedKey = GetKeyByValue(NoteValue);
-                form.titleTBox.Text = _project.dictionary[OperatedKey].Title;
-                form.ComboBoxCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
-                form.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
-                form.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
-                form.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
+                form.NoteTitle_Edit = _project.dictionary[OperatedKey].Title;
+                form.NoteCategory_Edit = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                form.NoteText_Edit = _project.dictionary[OperatedKey].NoteText;
+                form.CreatedDateTime_Edit = _project.dictionary[OperatedKey].DateofCreation;
+                form.ModifiedDateTime_Edit = _project.dictionary[OperatedKey].LastmodDate;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
@@ -159,8 +159,8 @@ namespace TestNoteAppUI
                 CategoryLabel.Text = CategoryText;
                 CategoryLabel.Visible = true;
                 textBox.Text = _project.dictionary[selected].NoteText;
-                dateTimePicker1.Value = _project.dictionary[selected].DateofCreation;
-                dateTimePicker2.Value = _project.dictionary[selected].LastmodDate;
+                createdDateTimePicker.Value = _project.dictionary[selected].DateofCreation;
+                modifiedDateTimePicker.Value = _project.dictionary[selected].LastmodDate;
             }
             Titlelabel.Visible = true;
         }
@@ -252,11 +252,11 @@ namespace TestNoteAppUI
             {
                 string NoteValue = TitleListbox.SelectedItem.ToString();
                 int OperatedKey = GetKeyByValue(NoteValue);
-                form.titleTBox.Text = _project.dictionary[OperatedKey].Title;
-                form.ComboBoxCategory1.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
-                form.textBox1.Text = _project.dictionary[OperatedKey].NoteText;
-                form.dateTimePicker1.Value = _project.dictionary[OperatedKey].DateofCreation;
-                form.dateTimePicker2.Value = _project.dictionary[OperatedKey].LastmodDate;
+                form.NoteTitle_Edit = _project.dictionary[OperatedKey].Title;
+                form.NoteCategory_Edit = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                form.NoteText_Edit = _project.dictionary[OperatedKey].NoteText;
+                form.CreatedDateTime_Edit = _project.dictionary[OperatedKey].DateofCreation;
+                form.ModifiedDateTime_Edit = _project.dictionary[OperatedKey].LastmodDate;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;

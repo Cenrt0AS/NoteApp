@@ -33,12 +33,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.titleTBox = new System.Windows.Forms.TextBox();
             this.ComboBoxCategory1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.createdDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.modifiedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Cancelbutton = new System.Windows.Forms.Button();
             this.OKbutton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TextTBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -84,13 +84,13 @@
             this.ComboBoxCategory1.Size = new System.Drawing.Size(112, 21);
             this.ComboBoxCategory1.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // createdDateTimePicker
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(65, 91);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.createdDateTimePicker.Enabled = false;
+            this.createdDateTimePicker.Location = new System.Drawing.Point(65, 91);
+            this.createdDateTimePicker.Name = "createdDateTimePicker";
+            this.createdDateTimePicker.Size = new System.Drawing.Size(138, 20);
+            this.createdDateTimePicker.TabIndex = 5;
             // 
             // label4
             // 
@@ -101,13 +101,13 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Modified:";
             // 
-            // dateTimePicker2
+            // modifiedDateTimePicker
             // 
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Location = new System.Drawing.Point(272, 91);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(139, 20);
-            this.dateTimePicker2.TabIndex = 7;
+            this.modifiedDateTimePicker.Enabled = false;
+            this.modifiedDateTimePicker.Location = new System.Drawing.Point(272, 91);
+            this.modifiedDateTimePicker.Name = "modifiedDateTimePicker";
+            this.modifiedDateTimePicker.Size = new System.Drawing.Size(139, 20);
+            this.modifiedDateTimePicker.TabIndex = 7;
             // 
             // Cancelbutton
             // 
@@ -134,28 +134,28 @@
             this.OKbutton.UseVisualStyleBackColor = true;
             this.OKbutton.Click += new System.EventHandler(this.OKbutton_Click);
             // 
-            // textBox1
+            // TextTBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TextTBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(4, 132);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(423, 170);
-            this.textBox1.TabIndex = 11;
+            this.TextTBox.Location = new System.Drawing.Point(4, 132);
+            this.TextTBox.Multiline = true;
+            this.TextTBox.Name = "TextTBox";
+            this.TextTBox.Size = new System.Drawing.Size(423, 170);
+            this.TextTBox.TabIndex = 11;
             // 
             // NoteManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 343);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TextTBox);
             this.Controls.Add(this.OKbutton);
             this.Controls.Add(this.Cancelbutton);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.modifiedDateTimePicker);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.createdDateTimePicker);
             this.Controls.Add(this.ComboBoxCategory1);
             this.Controls.Add(this.titleTBox);
             this.Controls.Add(this.label3);
@@ -177,11 +177,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox titleTBox;
         private System.Windows.Forms.ComboBox ComboBoxCategory1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker createdDateTimePicker;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker modifiedDateTimePicker;
         private System.Windows.Forms.Button Cancelbutton;
         private System.Windows.Forms.Button OKbutton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TextTBox;
     }
 }

@@ -16,6 +16,36 @@ namespace TestNoteAppUI
 
         public Note note;
         //TODO: Реализовать геттер и сеттер и через них передавать данные в компоненты.
+        public string NoteTitle_Edit
+        {
+            get { return titleTBox.Text; }
+            set { titleTBox.Text = value; }
+        }
+
+        public string NoteText_Edit
+        {
+            get { return TextTBox.Text;  }
+            set { TextTBox.Text = value; }
+        }
+
+        public int NoteCategory_Edit
+        {
+            get { return ComboBoxCategory1.SelectedIndex; }
+            set { ComboBoxCategory1.SelectedIndex = value; }
+        }
+
+        public DateTime CreatedDateTime_Edit
+        {
+            get { return createdDateTimePicker.Value; }
+            set { createdDateTimePicker.Value = value; }
+        }
+
+        public DateTime ModifiedDateTime_Edit
+        {
+            get { return modifiedDateTimePicker.Value; }
+            set { modifiedDateTimePicker.Value = value; }
+        }
+
         public NoteManage(Project dictionary)
         {
             InitializeComponent();
@@ -30,7 +60,7 @@ namespace TestNoteAppUI
         private void OKbutton_Click(object sender, EventArgs e)
         {
             int Category = ComboBoxCategory1.SelectedIndex;
-            note = new Note(titleTBox.Text, textBox1.Text, (NoteCategory)Category, DateTime.Now, DateTime.Now);                  
+            note = new Note(titleTBox.Text, TextTBox.Text, (NoteCategory)Category, DateTime.Now, DateTime.Now);                  
             DialogResult = DialogResult.OK;
         }
 

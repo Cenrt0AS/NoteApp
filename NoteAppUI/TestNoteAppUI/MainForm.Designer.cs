@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TitleListbox = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,14 +45,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.createdDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.modifiedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Titlelabel = new System.Windows.Forms.Label();
             this.textBox = new System.Windows.Forms.TextBox();
             this.AddNoteButton = new System.Windows.Forms.Button();
             this.EditNoteButton = new System.Windows.Forms.Button();
             this.RemoveNoteButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,9 +63,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TitleListbox.FormattingEnabled = true;
-            this.TitleListbox.Location = new System.Drawing.Point(24, 97);
+            this.TitleListbox.Location = new System.Drawing.Point(12, 95);
             this.TitleListbox.Name = "TitleListbox";
-            this.TitleListbox.Size = new System.Drawing.Size(120, 186);
+            this.TitleListbox.Size = new System.Drawing.Size(237, 277);
             this.TitleListbox.TabIndex = 1;
             this.TitleListbox.SelectedIndexChanged += new System.EventHandler(this.TitleLb_SelectedIndexChanged);
             // 
@@ -84,7 +86,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -101,27 +103,27 @@
             this.editToolStripMenuItem1,
             this.removeToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -130,13 +132,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -197,14 +199,14 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Created:";
             // 
-            // dateTimePicker1
+            // createdDateTimePicker
             // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(359, 104);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(137, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.createdDateTimePicker.Checked = false;
+            this.createdDateTimePicker.Enabled = false;
+            this.createdDateTimePicker.Location = new System.Drawing.Point(359, 104);
+            this.createdDateTimePicker.Name = "createdDateTimePicker";
+            this.createdDateTimePicker.Size = new System.Drawing.Size(137, 20);
+            this.createdDateTimePicker.TabIndex = 12;
             // 
             // label6
             // 
@@ -215,14 +217,14 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Modified:";
             // 
-            // dateTimePicker2
+            // modifiedDateTimePicker
             // 
-            this.dateTimePicker2.Checked = false;
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Location = new System.Drawing.Point(560, 104);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(142, 20);
-            this.dateTimePicker2.TabIndex = 14;
+            this.modifiedDateTimePicker.Checked = false;
+            this.modifiedDateTimePicker.Enabled = false;
+            this.modifiedDateTimePicker.Location = new System.Drawing.Point(560, 104);
+            this.modifiedDateTimePicker.Name = "modifiedDateTimePicker";
+            this.modifiedDateTimePicker.Size = new System.Drawing.Size(142, 20);
+            this.modifiedDateTimePicker.TabIndex = 14;
             // 
             // Titlelabel
             // 
@@ -248,47 +250,61 @@
             // 
             // AddNoteButton
             // 
-            this.AddNoteButton.Location = new System.Drawing.Point(15, 311);
+            this.AddNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddNoteButton.BackgroundImage")));
+            this.AddNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AddNoteButton.Location = new System.Drawing.Point(12, 378);
             this.AddNoteButton.Name = "AddNoteButton";
-            this.AddNoteButton.Size = new System.Drawing.Size(106, 23);
+            this.AddNoteButton.Size = new System.Drawing.Size(30, 30);
             this.AddNoteButton.TabIndex = 18;
-            this.AddNoteButton.Text = "Добавление";
             this.AddNoteButton.UseVisualStyleBackColor = true;
             this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
             // 
             // EditNoteButton
             // 
-            this.EditNoteButton.Location = new System.Drawing.Point(15, 340);
+            this.EditNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditNoteButton.BackgroundImage")));
+            this.EditNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.EditNoteButton.Location = new System.Drawing.Point(48, 378);
             this.EditNoteButton.Name = "EditNoteButton";
-            this.EditNoteButton.Size = new System.Drawing.Size(106, 23);
+            this.EditNoteButton.Size = new System.Drawing.Size(30, 30);
             this.EditNoteButton.TabIndex = 19;
-            this.EditNoteButton.Text = "Редактирование";
             this.EditNoteButton.UseVisualStyleBackColor = true;
             this.EditNoteButton.Click += new System.EventHandler(this.EditNoteButton_Click);
             // 
             // RemoveNoteButton
             // 
-            this.RemoveNoteButton.Location = new System.Drawing.Point(15, 369);
+            this.RemoveNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RemoveNoteButton.BackgroundImage")));
+            this.RemoveNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RemoveNoteButton.Location = new System.Drawing.Point(84, 378);
             this.RemoveNoteButton.Name = "RemoveNoteButton";
-            this.RemoveNoteButton.Size = new System.Drawing.Size(106, 23);
+            this.RemoveNoteButton.Size = new System.Drawing.Size(27, 30);
             this.RemoveNoteButton.TabIndex = 20;
-            this.RemoveNoteButton.Text = "Удаление";
             this.RemoveNoteButton.UseVisualStyleBackColor = true;
             this.RemoveNoteButton.Click += new System.EventHandler(this.RemoveNoteButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(7, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 29);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Заметки:";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 420);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.RemoveNoteButton);
             this.Controls.Add(this.EditNoteButton);
             this.Controls.Add(this.AddNoteButton);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.Titlelabel);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.modifiedDateTimePicker);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.createdDateTimePicker);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.label3);
@@ -324,14 +340,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label CategoryLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker createdDateTimePicker;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker modifiedDateTimePicker;
         private System.Windows.Forms.Label Titlelabel;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button AddNoteButton;
         private System.Windows.Forms.Button EditNoteButton;
         private System.Windows.Forms.Button RemoveNoteButton;
+        private System.Windows.Forms.Label label2;
     }
 }
 
