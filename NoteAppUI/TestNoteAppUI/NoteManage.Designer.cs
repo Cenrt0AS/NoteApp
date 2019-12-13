@@ -44,7 +44,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Location = new System.Drawing.Point(7, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 54);
+            this.label2.Location = new System.Drawing.Point(7, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 1;
@@ -62,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 97);
+            this.label3.Location = new System.Drawing.Point(2, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             // titleTBox
             // 
-            this.titleTBox.Location = new System.Drawing.Point(70, 19);
+            this.titleTBox.Location = new System.Drawing.Point(65, 12);
             this.titleTBox.Name = "titleTBox";
             this.titleTBox.Size = new System.Drawing.Size(350, 20);
             this.titleTBox.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             this.ComboBoxCategory1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxCategory1.FormattingEnabled = true;
-            this.ComboBoxCategory1.Location = new System.Drawing.Point(70, 54);
+            this.ComboBoxCategory1.Location = new System.Drawing.Point(65, 38);
             this.ComboBoxCategory1.Name = "ComboBoxCategory1";
             this.ComboBoxCategory1.Size = new System.Drawing.Size(133, 21);
             this.ComboBoxCategory1.TabIndex = 4;
@@ -87,7 +87,7 @@
             // createdDateTimePicker
             // 
             this.createdDateTimePicker.Enabled = false;
-            this.createdDateTimePicker.Location = new System.Drawing.Point(65, 97);
+            this.createdDateTimePicker.Location = new System.Drawing.Point(55, 75);
             this.createdDateTimePicker.Name = "createdDateTimePicker";
             this.createdDateTimePicker.Size = new System.Drawing.Size(138, 20);
             this.createdDateTimePicker.TabIndex = 5;
@@ -95,7 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(209, 97);
+            this.label4.Location = new System.Drawing.Point(199, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 6;
@@ -104,16 +104,15 @@
             // modifiedDateTimePicker
             // 
             this.modifiedDateTimePicker.Enabled = false;
-            this.modifiedDateTimePicker.Location = new System.Drawing.Point(265, 97);
+            this.modifiedDateTimePicker.Location = new System.Drawing.Point(255, 75);
             this.modifiedDateTimePicker.Name = "modifiedDateTimePicker";
             this.modifiedDateTimePicker.Size = new System.Drawing.Size(139, 20);
             this.modifiedDateTimePicker.TabIndex = 7;
             // 
             // Cancelbutton
             // 
-            this.Cancelbutton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Cancelbutton.Location = new System.Drawing.Point(336, 308);
+            this.Cancelbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cancelbutton.Location = new System.Drawing.Point(353, 318);
             this.Cancelbutton.Name = "Cancelbutton";
             this.Cancelbutton.Size = new System.Drawing.Size(75, 23);
             this.Cancelbutton.TabIndex = 9;
@@ -123,10 +122,9 @@
             // 
             // OKbutton
             // 
-            this.OKbutton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.OKbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OKbutton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.OKbutton.Location = new System.Drawing.Point(255, 308);
+            this.OKbutton.Location = new System.Drawing.Point(272, 318);
             this.OKbutton.Name = "OKbutton";
             this.OKbutton.Size = new System.Drawing.Size(75, 23);
             this.OKbutton.TabIndex = 10;
@@ -139,10 +137,10 @@
             this.TextTBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextTBox.Location = new System.Drawing.Point(4, 132);
+            this.TextTBox.Location = new System.Drawing.Point(4, 101);
             this.TextTBox.Multiline = true;
             this.TextTBox.Name = "TextTBox";
-            this.TextTBox.Size = new System.Drawing.Size(423, 170);
+            this.TextTBox.Size = new System.Drawing.Size(423, 211);
             this.TextTBox.TabIndex = 11;
             // 
             // NoteManage

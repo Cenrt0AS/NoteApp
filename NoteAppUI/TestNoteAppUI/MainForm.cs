@@ -146,6 +146,8 @@ namespace TestNoteAppUI
                 _project.dictionary.Remove(operatedKey);
                 TitleListboxAdd();
                 SaveProject();
+                textBox.Text = "";
+                label2.Text = "";
             }
         }
 

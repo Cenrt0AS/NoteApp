@@ -59,13 +59,10 @@
             // 
             // TitleListbox
             // 
-            this.TitleListbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TitleListbox.FormattingEnabled = true;
-            this.TitleListbox.Location = new System.Drawing.Point(12, 95);
+            this.TitleListbox.Location = new System.Drawing.Point(0, 95);
             this.TitleListbox.Name = "TitleListbox";
-            this.TitleListbox.Size = new System.Drawing.Size(237, 277);
+            this.TitleListbox.Size = new System.Drawing.Size(249, 290);
             this.TitleListbox.TabIndex = 1;
             this.TitleListbox.SelectedIndexChanged += new System.EventHandler(this.TitleLb_SelectedIndexChanged);
             // 
@@ -86,7 +83,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -103,27 +100,27 @@
             this.editToolStripMenuItem1,
             this.removeToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -132,13 +129,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -155,7 +152,7 @@
             // 
             this.Captionlabel.AutoSize = true;
             this.Captionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Captionlabel.Location = new System.Drawing.Point(301, 33);
+            this.Captionlabel.Location = new System.Drawing.Point(250, 33);
             this.Captionlabel.Name = "Captionlabel";
             this.Captionlabel.Size = new System.Drawing.Size(103, 25);
             this.Captionlabel.TabIndex = 4;
@@ -174,7 +171,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(306, 75);
+            this.label3.Location = new System.Drawing.Point(255, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 6;
@@ -183,7 +180,7 @@
             // CategoryLabel
             // 
             this.CategoryLabel.AutoSize = true;
-            this.CategoryLabel.Location = new System.Drawing.Point(364, 75);
+            this.CategoryLabel.Location = new System.Drawing.Point(313, 66);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(35, 13);
             this.CategoryLabel.TabIndex = 7;
@@ -193,7 +190,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(306, 104);
+            this.label5.Location = new System.Drawing.Point(255, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 11;
@@ -203,7 +200,7 @@
             // 
             this.createdDateTimePicker.Checked = false;
             this.createdDateTimePicker.Enabled = false;
-            this.createdDateTimePicker.Location = new System.Drawing.Point(359, 104);
+            this.createdDateTimePicker.Location = new System.Drawing.Point(308, 95);
             this.createdDateTimePicker.Name = "createdDateTimePicker";
             this.createdDateTimePicker.Size = new System.Drawing.Size(137, 20);
             this.createdDateTimePicker.TabIndex = 12;
@@ -211,7 +208,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(503, 104);
+            this.label6.Location = new System.Drawing.Point(452, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 13;
@@ -221,16 +218,17 @@
             // 
             this.modifiedDateTimePicker.Checked = false;
             this.modifiedDateTimePicker.Enabled = false;
-            this.modifiedDateTimePicker.Location = new System.Drawing.Point(560, 104);
+            this.modifiedDateTimePicker.Location = new System.Drawing.Point(509, 95);
             this.modifiedDateTimePicker.Name = "modifiedDateTimePicker";
             this.modifiedDateTimePicker.Size = new System.Drawing.Size(142, 20);
             this.modifiedDateTimePicker.TabIndex = 14;
             // 
             // Titlelabel
             // 
+            this.Titlelabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Titlelabel.AutoSize = true;
             this.Titlelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Titlelabel.Location = new System.Drawing.Point(410, 33);
+            this.Titlelabel.Location = new System.Drawing.Point(359, 33);
             this.Titlelabel.Name = "Titlelabel";
             this.Titlelabel.Size = new System.Drawing.Size(86, 31);
             this.Titlelabel.TabIndex = 16;
@@ -242,17 +240,18 @@
             this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox.Location = new System.Drawing.Point(292, 147);
+            this.textBox.Location = new System.Drawing.Point(255, 121);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(410, 261);
+            this.textBox.Size = new System.Drawing.Size(459, 298);
             this.textBox.TabIndex = 17;
             // 
             // AddNoteButton
             // 
+            this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddNoteButton.BackgroundImage")));
             this.AddNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.AddNoteButton.Location = new System.Drawing.Point(12, 378);
+            this.AddNoteButton.Location = new System.Drawing.Point(3, 389);
             this.AddNoteButton.Name = "AddNoteButton";
             this.AddNoteButton.Size = new System.Drawing.Size(30, 30);
             this.AddNoteButton.TabIndex = 18;
@@ -261,9 +260,10 @@
             // 
             // EditNoteButton
             // 
+            this.EditNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.EditNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditNoteButton.BackgroundImage")));
             this.EditNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.EditNoteButton.Location = new System.Drawing.Point(48, 378);
+            this.EditNoteButton.Location = new System.Drawing.Point(39, 389);
             this.EditNoteButton.Name = "EditNoteButton";
             this.EditNoteButton.Size = new System.Drawing.Size(30, 30);
             this.EditNoteButton.TabIndex = 19;
@@ -272,9 +272,10 @@
             // 
             // RemoveNoteButton
             // 
+            this.RemoveNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.RemoveNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RemoveNoteButton.BackgroundImage")));
             this.RemoveNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RemoveNoteButton.Location = new System.Drawing.Point(84, 378);
+            this.RemoveNoteButton.Location = new System.Drawing.Point(75, 389);
             this.RemoveNoteButton.Name = "RemoveNoteButton";
             this.RemoveNoteButton.Size = new System.Drawing.Size(27, 30);
             this.RemoveNoteButton.TabIndex = 20;
