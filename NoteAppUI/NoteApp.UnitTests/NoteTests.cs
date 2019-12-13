@@ -18,7 +18,6 @@ namespace NoteApp.UnitTests
         [Test(Description = "Позитивный тест геттера Tittle")]
         public void TestTitleGet_CorrectValue()
         {
-
             var expected = "Заголовок";
             var note = new Note("", "", NoteCategory.Docs, DateTime.Now, DateTime.Now);
             note.Title = expected;

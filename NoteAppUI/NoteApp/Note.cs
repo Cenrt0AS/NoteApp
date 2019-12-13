@@ -44,6 +44,7 @@ namespace NoteApp
             DateofCreation = dateofCreation;
             LastmodDate = lastmodDate;
         }
+
         public string Title 
         {
             get

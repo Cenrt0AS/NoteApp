@@ -14,39 +14,43 @@ namespace NoteApp.UnitTests
     {
 
         private Project _testproject = new Project();
+        private Project _testproject2 = new Project();
+
         [Test(Description = "Тест сериализации.")]
         public void SerializeTest()
         {
-            // string testFilePath = Environment.CurrentDirectory + "testSerialize.json";
-            //string testFilePath = Path.Combine(System.Environment.CurrentDirectory, @"\testSerialize.json");
-            string testFilePath = @"C:\Users\Admin\Source\Repos\YalovskiyV\NoteApp\NoteAppUI\NoteApp.UnitTests\testSerialize.json";
-           // DateTime createdDate = new DateTime(2019, 12, 12, 18, 20, 37.0369362);
-            //DateTime modifiedDate = new DateTime(2015, 7, 20, 18, 30, 25);
-            DateTime createdDate = new DateTime(2019,12,12);
-            DateTime modifiedDate = new DateTime(2019,12,12);
-            var date1 = createdDate.Date;
-            var date2 = modifiedDate.Date;  
-            var expected = File.ReadAllText(testFilePath);
-            var note = new Note("Тест", "Тестик", NoteCategory.Docs,date1, date2);
+            string testFilePath = @"testSerialize.json";
+            string expected = File.ReadAllText(testFilePath);
+            Note note = new Note("Тест", "Тестик", NoteCategory.Docs, new DateTime(2019, 12, 12), new DateTime(2019, 12, 12));
             //string defaultPath = Environment.CurrentDirectory;
             string filename = "testSerialize1.json";
-            //_testproject.dictionary.Add(0, note);
+            _testproject.dictionary.Add(0, note);
             ProjectManager.SaveToFile(_testproject, filename);
-            var actual = File.ReadAllText("testSerialize1.json");
+            string actual = File.ReadAllText(filename);
             Assert.AreEqual(expected, actual, "Файлы в сериализации различаются !");
         }
 
         [Test(Description = "Тест десериализации.")]
         public void DeserializeTest()
         {
-            var note = new Note("Тест", "Тестик", NoteCategory.Docs, DateTime.Now, DateTime.Now);
-            _testproject.dictionary.Add(0, note);
-            var expected = _testproject;
-            string filename = @"C:\Users\Admin\Source\Repos\YalovskiyV\NoteApp\NoteAppUI\NoteApp.UnitTests\testSerialize.json";
-            var preactual = ProjectManager.LoadFromFile(filename);
-            var actual = preactual;
-            Assert.AreEqual(expected, actual, "Значения в десериализации различаются !");
+            Note note = new Note("Тест", "Тестик", NoteCategory.Docs, new DateTime(2019, 12, 12), new DateTime(2019, 12, 12));
+            _testproject2.dictionary.Add(0, note);
+            Project expected = _testproject2;
+            string filename = @"testSerialize.json";
+            Project preactual = ProjectManager.LoadFromFile(filename);
+            Project actual = preactual;
+    
+            //TODO: 
+            Assert.AreEqual(expected.dictionary[0].Title, actual.dictionary[0].Title, 
+                "Значения в десериализации различаются !");
+            Assert.AreEqual(expected.dictionary[0].NoteText, actual.dictionary[0].NoteText,
+                "Значения в десериализации различаются !");
+            Assert.AreEqual(expected.dictionary[0].Category, actual.dictionary[0].Category,
+                "Значения в десериализации различаются !");
+            Assert.AreEqual(expected.dictionary[0].DateofCreation, actual.dictionary[0].DateofCreation,
+                "Значения в десериализации различаются !");
+            Assert.AreEqual(expected.dictionary[0].LastmodDate, actual.dictionary[0].LastmodDate,
+                "Значения в десериализации различаются !");
         }
-
     }
 }
