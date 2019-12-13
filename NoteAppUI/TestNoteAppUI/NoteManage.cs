@@ -14,6 +14,20 @@ namespace TestNoteAppUI
     public partial class NoteManage : Form
     {
 
+        public Note Note
+        {
+            get
+            {
+                return note;
+            }
+            set
+            {
+                note = value;
+                titleTBox.Text = note.Title;
+                TextTBox.Text = note.NoteText;
+            }
+        }
+
         public Note note;
         //TODO: Реализовать геттер и сеттер и через них передавать данные в компоненты.
         public string NoteTitle_Edit

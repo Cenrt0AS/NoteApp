@@ -40,7 +40,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.Captionlabel = new System.Windows.Forms.Label();
             this.ComoBoxCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CategoryLabel = new System.Windows.Forms.Label();
@@ -59,6 +58,8 @@
             // 
             // TitleListbox
             // 
+            this.TitleListbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.TitleListbox.FormattingEnabled = true;
             this.TitleListbox.Location = new System.Drawing.Point(0, 95);
             this.TitleListbox.Name = "TitleListbox";
@@ -106,21 +107,21 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -147,16 +148,6 @@
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "ShowCategory:";
-            // 
-            // Captionlabel
-            // 
-            this.Captionlabel.AutoSize = true;
-            this.Captionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Captionlabel.Location = new System.Drawing.Point(250, 33);
-            this.Captionlabel.Name = "Captionlabel";
-            this.Captionlabel.Size = new System.Drawing.Size(103, 25);
-            this.Captionlabel.TabIndex = 4;
-            this.Captionlabel.Text = "Заметка:";
             // 
             // ComoBoxCategory
             // 
@@ -228,7 +219,7 @@
             this.Titlelabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Titlelabel.AutoSize = true;
             this.Titlelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Titlelabel.Location = new System.Drawing.Point(359, 33);
+            this.Titlelabel.Location = new System.Drawing.Point(262, 24);
             this.Titlelabel.Name = "Titlelabel";
             this.Titlelabel.Size = new System.Drawing.Size(86, 31);
             this.Titlelabel.TabIndex = 16;
@@ -310,7 +301,6 @@
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ComoBoxCategory);
-            this.Controls.Add(this.Captionlabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TitleListbox);
             this.Controls.Add(this.menuStrip1);
@@ -336,7 +326,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Captionlabel;
         private System.Windows.Forms.ComboBox ComoBoxCategory;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label CategoryLabel;

@@ -40,7 +40,7 @@ namespace NoteApp.UnitTests
            
             var wrongTitle = "123456789101112113142412412424214214214kkmkkmkmkkmkmkmkjnuniunu21421432435435423523432532534523523532532523";
             var note = new Note(wrongTitle, "", NoteCategory.Docs, DateTime.Now, DateTime.Now);
-            Assert.Throws<ArgumentException>(
+             Assert.Throws<ArgumentException>(
                 () => { note.Title = wrongTitle; }, "Должно возникать исключение, если значение длинее 50 символов.");
         }
         [Test(Description = "Позитивный тест cеттера NoteText")]

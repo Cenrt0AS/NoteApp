@@ -51,9 +51,8 @@ namespace NoteApp
             {
                 return _title;
             }
-
             set
-            {
+            { 
                 if (value.Length < 50)
                 {
                     _title = value;

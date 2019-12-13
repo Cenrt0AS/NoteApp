@@ -104,11 +104,12 @@ namespace TestNoteAppUI
             {
                 string NoteValue = TitleListbox.SelectedItem.ToString();
                 int OperatedKey = GetKeyByValue(NoteValue);
-                form.NoteTitle_Edit = _project.dictionary[OperatedKey].Title;
-                form.NoteCategory_Edit = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
-                form.NoteText_Edit = _project.dictionary[OperatedKey].NoteText;
-                form.CreatedDateTime_Edit = _project.dictionary[OperatedKey].DateofCreation;
-                form.ModifiedDateTime_Edit = _project.dictionary[OperatedKey].LastmodDate;
+                form.Note = _project.dictionary[OperatedKey];
+                //form.NoteTitle_Edit = _project.dictionary[OperatedKey].Title;
+                //form.NoteCategory_Edit = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                //form.NoteText_Edit = _project.dictionary[OperatedKey].NoteText;
+                //form.CreatedDateTime_Edit = _project.dictionary[OperatedKey].DateofCreation;
+                //form.ModifiedDateTime_Edit = _project.dictionary[OperatedKey].LastmodDate;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
