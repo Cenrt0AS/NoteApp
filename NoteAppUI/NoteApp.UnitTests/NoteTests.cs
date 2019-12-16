@@ -22,7 +22,6 @@ namespace NoteApp.UnitTests
             var note = new Note("", "", NoteCategory.Docs, DateTime.Now, DateTime.Now);
             note.Title = expected;
             var actual = note.Title;
-
             Assert.AreEqual(expected, actual, "Геттер Title возвращает неправильный заголовок.");
         }
         [Test(Description = "Позитивный тест cеттера Tittle")]
@@ -37,7 +36,6 @@ namespace NoteApp.UnitTests
         [Test(Description = "Негативный тест cеттера Tittle, присваивание более 50 значений.")]
         public void TestNoteTitleSet_BadValue()
         {
-           
             var wrongTitle = "123456789101112113142412412424214214214kkmkkmkmkkmkmkmkjnuniunu21421432435435423523432532534523523532532523";
             var note = new Note(wrongTitle, "", NoteCategory.Docs, DateTime.Now, DateTime.Now);
              Assert.Throws<ArgumentException>(
