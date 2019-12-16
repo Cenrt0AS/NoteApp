@@ -165,7 +165,7 @@ namespace TestNoteAppUI
                 CategoryText = _project.dictionary[selected].Category.ToString();
                 CategoryLabel.Text = CategoryText;
                 CategoryLabel.Visible = true;
-                textBox.Text = _project.dictionary[selected].NoteText;
+                textBox.Text = _project.dictionary[selected].Text;
                 createdDateTimePicker.Value = _project.dictionary[selected].DateofCreation;
                 modifiedDateTimePicker.Value = _project.dictionary[selected].LastmodDate;
             }

@@ -48,7 +48,7 @@ namespace NoteApp.UnitTests
         {
             var expected = "Заголовок_заметки";
             var note = new Note("Заголовок_заметки", "12313", NoteCategory.Docs, DateTime.Now, DateTime.Now);
-            note.NoteText = expected;
+            note.Text = expected;
             Assert.AreEqual(expected, note.Title, "Cеттер NoteText  устанавливает неправильное значение.");
         }
     }

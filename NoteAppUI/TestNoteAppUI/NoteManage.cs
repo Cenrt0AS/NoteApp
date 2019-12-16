@@ -24,7 +24,7 @@ namespace TestNoteAppUI
             {
                 note = value;
                 titleTBox.Text = note.Title;
-                TextTBox.Text = note.NoteText;
+                TextTBox.Text = note.Text;
                 ComboBoxCategory1.SelectedIndex = Convert.ToInt32(note.Category);
                 createdDateTimePicker.Value = note.DateofCreation;
                 modifiedDateTimePicker.Value = note.LastmodDate;
@@ -32,7 +32,6 @@ namespace TestNoteAppUI
         }
 
         public Note note;
-      
 
         public NoteManage(Project dictionary)
         {

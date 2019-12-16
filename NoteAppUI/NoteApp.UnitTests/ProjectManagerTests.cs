@@ -63,7 +63,7 @@ namespace NoteApp.UnitTests
             { 
                 Assert.AreEqual(expected.dictionary[i].Title, actual.dictionary[i].Title, 
                 "Значения в десериализации различаются !");
-            Assert.AreEqual(expected.dictionary[i].NoteText, actual.dictionary[i].NoteText,
+            Assert.AreEqual(expected.dictionary[i].Text, actual.dictionary[i].Text,
                 "Значения в десериализации различаются !");
             Assert.AreEqual(expected.dictionary[i].Category, actual.dictionary[i].Category,
                 "Значения в десериализации различаются !");

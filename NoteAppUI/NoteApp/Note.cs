@@ -24,7 +24,7 @@ namespace NoteApp
         /// <summary>
         /// 
         /// </summary>
-        public string NoteText { get; set; } = "Текст заметки";
+        public string Text { get; set; } = "Текст заметки";
         public DateTime DateofCreation { get; set; } = DateTime.Now;
         public DateTime LastmodDate { get; set; } = DateTime.Now;
 
@@ -39,7 +39,7 @@ namespace NoteApp
         public Note(string title, string noteText, NoteCategory category, DateTime dateofCreation, DateTime lastmodDate)
         {
             Title = title; 
-            NoteText = noteText;
+            Text = noteText;
             Category = category;
             DateofCreation = dateofCreation;
             LastmodDate = lastmodDate;
