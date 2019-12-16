@@ -243,9 +243,9 @@
             this.AddNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddNoteButton.BackgroundImage")));
             this.AddNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddNoteButton.Location = new System.Drawing.Point(3, 389);
+            this.AddNoteButton.Location = new System.Drawing.Point(9, 389);
             this.AddNoteButton.Name = "AddNoteButton";
-            this.AddNoteButton.Size = new System.Drawing.Size(30, 30);
+            this.AddNoteButton.Size = new System.Drawing.Size(24, 24);
             this.AddNoteButton.TabIndex = 18;
             this.AddNoteButton.UseVisualStyleBackColor = true;
             this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
@@ -258,7 +258,7 @@
             this.EditNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditNoteButton.Location = new System.Drawing.Point(39, 389);
             this.EditNoteButton.Name = "EditNoteButton";
-            this.EditNoteButton.Size = new System.Drawing.Size(30, 30);
+            this.EditNoteButton.Size = new System.Drawing.Size(24, 24);
             this.EditNoteButton.TabIndex = 19;
             this.EditNoteButton.UseVisualStyleBackColor = true;
             this.EditNoteButton.Click += new System.EventHandler(this.EditNoteButton_Click);
@@ -269,9 +269,9 @@
             this.RemoveNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RemoveNoteButton.BackgroundImage")));
             this.RemoveNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.RemoveNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveNoteButton.Location = new System.Drawing.Point(75, 389);
+            this.RemoveNoteButton.Location = new System.Drawing.Point(69, 389);
             this.RemoveNoteButton.Name = "RemoveNoteButton";
-            this.RemoveNoteButton.Size = new System.Drawing.Size(27, 30);
+            this.RemoveNoteButton.Size = new System.Drawing.Size(24, 24);
             this.RemoveNoteButton.TabIndex = 20;
             this.RemoveNoteButton.UseVisualStyleBackColor = true;
             this.RemoveNoteButton.Click += new System.EventHandler(this.RemoveNoteButton_Click);
