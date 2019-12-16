@@ -112,7 +112,7 @@
             // Cancelbutton
             // 
             this.Cancelbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Cancelbutton.Location = new System.Drawing.Point(353, 318);
+            this.Cancelbutton.Location = new System.Drawing.Point(345, 308);
             this.Cancelbutton.Name = "Cancelbutton";
             this.Cancelbutton.Size = new System.Drawing.Size(75, 23);
             this.Cancelbutton.TabIndex = 9;
@@ -124,7 +124,7 @@
             // 
             this.OKbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OKbutton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.OKbutton.Location = new System.Drawing.Point(272, 318);
+            this.OKbutton.Location = new System.Drawing.Point(264, 308);
             this.OKbutton.Name = "OKbutton";
             this.OKbutton.Size = new System.Drawing.Size(75, 23);
             this.OKbutton.TabIndex = 10;
@@ -140,7 +140,7 @@
             this.TextTBox.Location = new System.Drawing.Point(4, 101);
             this.TextTBox.Multiline = true;
             this.TextTBox.Name = "TextTBox";
-            this.TextTBox.Size = new System.Drawing.Size(423, 211);
+            this.TextTBox.Size = new System.Drawing.Size(423, 201);
             this.TextTBox.TabIndex = 11;
             // 
             // NoteManage
@@ -159,6 +159,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(410, 310);
             this.Name = "NoteManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Note";
