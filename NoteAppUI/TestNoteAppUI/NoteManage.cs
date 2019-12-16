@@ -25,40 +25,14 @@ namespace TestNoteAppUI
                 note = value;
                 titleTBox.Text = note.Title;
                 TextTBox.Text = note.NoteText;
+                ComboBoxCategory1.SelectedIndex = Convert.ToInt32(note.Category);
+                createdDateTimePicker.Value = note.DateofCreation;
+                modifiedDateTimePicker.Value = note.LastmodDate;
             }
         }
 
         public Note note;
-        //TODO: Реализовать геттер и сеттер и через них передавать данные в компоненты.
-        public string NoteTitle_Edit
-        {
-            get { return titleTBox.Text; }
-            set { titleTBox.Text = value; }
-        }
-
-        public string NoteText_Edit
-        {
-            get { return TextTBox.Text;  }
-            set { TextTBox.Text = value; }
-        }
-
-        public int NoteCategory_Edit
-        {
-            get { return ComboBoxCategory1.SelectedIndex; }
-            set { ComboBoxCategory1.SelectedIndex = value; }
-        }
-
-        public DateTime CreatedDateTime_Edit
-        {
-            get { return createdDateTimePicker.Value; }
-            set { createdDateTimePicker.Value = value; }
-        }
-
-        public DateTime ModifiedDateTime_Edit
-        {
-            get { return modifiedDateTimePicker.Value; }
-            set { modifiedDateTimePicker.Value = value; }
-        }
+      
 
         public NoteManage(Project dictionary)
         {
