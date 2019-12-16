@@ -40,7 +40,7 @@ namespace NoteApp.UnitTests
             Project preactual = ProjectManager.LoadFromFile(filename);
             Project actual = preactual;
     
-            //TODO: 
+            //TODO: выасыв
             Assert.AreEqual(expected.dictionary[0].Title, actual.dictionary[0].Title, 
                 "Значения в десериализации различаются !");
             Assert.AreEqual(expected.dictionary[0].NoteText, actual.dictionary[0].NoteText,
