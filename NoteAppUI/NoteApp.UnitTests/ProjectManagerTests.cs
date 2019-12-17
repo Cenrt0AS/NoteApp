@@ -27,7 +27,7 @@ namespace NoteApp.UnitTests
             Note note1 = new Note("Машина", "Купить машину", NoteCategory.Home, new DateTime(2019, 11, 11).Date, new DateTime(2019, 11, 11).Date);
             Note note2 = new Note("Телефон", "Записать телефон", NoteCategory.HealthAndSport, new DateTime(2018, 12, 12).Date, new DateTime(2018, 12, 12).Date);
             Note note3 = new Note("Встреча", "Встретиться с человеком", NoteCategory.People, new DateTime(2019, 12, 12).Date, new DateTime(2019, 12, 12).Date);
-              string filename = "testSerialize1.json";
+              string filename = $@"{path}\testSerialize1.json";
             //for (int i=0; i<=3; i++)
             //  { 
 
