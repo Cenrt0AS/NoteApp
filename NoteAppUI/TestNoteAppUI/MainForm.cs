@@ -20,6 +20,7 @@ namespace TestNoteAppUI
         public MainForm()
         {
             InitializeComponent();
+            this.KeyPreview = true;
             LoadProject();
             TitleListboxAdd();
             //Передача полю Combobox формы MainForm значений из перечисление NoteCategory.
@@ -292,14 +293,35 @@ namespace TestNoteAppUI
                 int operatedKey = GetKeyByValue(TitleListbox.SelectedItem.ToString());
                 _project.dictionary.Remove(operatedKey);
                 TitleListboxAdd();
+                textBox.Text = "";
+                label2.Text = "";
                 SaveProject();
             }
         }
 
-
-
-        //TODO: Реализовать взаместо PictureBox Buttons
-        //TODO: Переименовать функции, глагол впереди.
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (TitleListbox.SelectedIndex != -1)
+                {
+                    DialogResult result = MessageBox.Show(
+                    "Удалить заметку?",
+                    "Сообщение",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+                    if (result == DialogResult.Yes)
+                        RemoveNoteButton_Click(sender, e);
+                }
+            }
+            if (e.KeyCode == Keys.F4 && e.Alt)
+            {
+                SaveProject();
+                Close();
+            }
+        }
     }
 
 }
