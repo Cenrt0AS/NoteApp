@@ -59,7 +59,7 @@ namespace NoteApp
                     LastmodDate = DateTime.Now;
                 }
                 else
-                    throw new ArgumentException();
+                    throw new ArgumentException("value.Length > 50");
             }
 
         }
