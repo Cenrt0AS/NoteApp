@@ -335,6 +335,7 @@ namespace TestNoteAppUI
             FileInfo fileInf = new FileInfo(path);
             if (fileInf.Exists)
             {
+
                 string RLast = File.ReadAllText("LastNote.txt");
                 int Last = System.Convert.ToInt32(RLast);
                 string CategoryText = _project.dictionary[Last].Category.ToString();
@@ -343,6 +344,7 @@ namespace TestNoteAppUI
                 textBox.Text = _project.dictionary[Last].Text;
                 createdDateTimePicker.Value = _project.dictionary[Last].DateofCreation;
                 modifiedDateTimePicker.Value = _project.dictionary[Last].LastmodDate;
+                MessageBox.Show(Last.ToString());
                 fileInf.Delete();
             }
             else
@@ -364,10 +366,10 @@ namespace TestNoteAppUI
             int Last = GetKeyByValue(note.Title);
             if (Last >= 0)
             {
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-                if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes")))
-                    Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes"));
-                StreamWriter print = new StreamWriter("LastNote.txt", false);
+                string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes\\LastNote.txt");
+                //FileInfo fileInf = new FileInfo(path);
+
+                StreamWriter print = new StreamWriter(path, false);
                 print.Write(Last);
                 print.Close();
             }
