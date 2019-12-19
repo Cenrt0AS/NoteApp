@@ -24,7 +24,9 @@ namespace TestNoteAppUI
             LoadProject();
             TitleListboxAdd();
             //Передача полю Combobox формы MainForm значений из перечисление NoteCategory.
-            ComoBoxCategory.DataSource = Enum.GetValues(typeof(NoteCategory));
+            ComboBoxCategory.DataSource = Enum.GetValues(typeof(NoteCategory));
+            CurrentNoteLoad();
+            //ComboBoxCategory.Items.Add("All");
 
             //Дополнительная реализация конец.
         }
@@ -38,7 +40,7 @@ namespace TestNoteAppUI
             foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
             {
                 int n = 0;
-                if (ComoBoxCategory.SelectedIndex == Convert.ToInt32(kvp.Value.Category))
+                if (ComboBoxCategory.SelectedIndex == Convert.ToInt32(kvp.Value.Category))
                 {
                     TitleListbox.Items.Insert(n, kvp.Value.Title);
                     n++;
@@ -169,8 +171,10 @@ namespace TestNoteAppUI
                 textBox.Text = _project.dictionary[selected].Text;
                 createdDateTimePicker.Value = _project.dictionary[selected].DateofCreation;
                 modifiedDateTimePicker.Value = _project.dictionary[selected].LastmodDate;
+                CurrentNoteSave(_project.dictionary[selected]);
             }
             Titlelabel.Visible = true;
+
         }
         /// <summary>
         /// Верхнее меню ->Help->About
@@ -217,7 +221,7 @@ namespace TestNoteAppUI
         /// Функция, которая проверяет доступность ключа в словаре.
         /// </summary>
         /// <returns>Возвращает индекс доступного ключа.</returns>
-        public int AvailableKey ()
+        public int AvailableKey()
         {
             int i = 0;
             foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
@@ -260,6 +264,7 @@ namespace TestNoteAppUI
             {
                 string NoteValue = TitleListbox.SelectedItem.ToString();
                 int OperatedKey = GetKeyByValue(NoteValue);
+                form.Note = _project.dictionary[OperatedKey];
                 //form.NoteTitle_Edit = _project.dictionary[OperatedKey].Title;
                 //form.NoteCategory_Edit = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
                 //form.NoteText_Edit = _project.dictionary[OperatedKey].NoteText;
@@ -321,6 +326,52 @@ namespace TestNoteAppUI
                 SaveProject();
                 Close();
             }
+        }
+
+        //TODO: Текущая заметка
+        private void CurrentNoteLoad()
+        {
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes\\LastNote.txt");
+            FileInfo fileInf = new FileInfo(path);
+            if (fileInf.Exists)
+            {
+                string RLast = File.ReadAllText("LastNote.txt");
+                int Last = System.Convert.ToInt32(RLast);
+                string CategoryText = _project.dictionary[Last].Category.ToString();
+                CategoryLabel.Text = CategoryText;
+                CategoryLabel.Visible = true;
+                textBox.Text = _project.dictionary[Last].Text;
+                createdDateTimePicker.Value = _project.dictionary[Last].DateofCreation;
+                modifiedDateTimePicker.Value = _project.dictionary[Last].LastmodDate;
+                fileInf.Delete();
+            }
+            else
+            {
+                //int Last = GetKeyByValue(note.Title);
+                //    if (Last >= 0)
+                //    { 
+                //       Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                //            if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes")))
+                //                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes"));
+                //       StreamWriter print = new StreamWriter("LastNote.txt", false);
+                //       print.Write(Last);
+                //       print.Close();
+            }
+
+        }
+            private void CurrentNoteSave(Note note)
+            {
+            int Last = GetKeyByValue(note.Title);
+            if (Last >= 0)
+            {
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes")))
+                    Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes"));
+                StreamWriter print = new StreamWriter("LastNote.txt", false);
+                print.Write(Last);
+                print.Close();
+            }
+            
         }
     }
 

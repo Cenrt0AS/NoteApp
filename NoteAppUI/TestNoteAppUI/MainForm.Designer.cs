@@ -40,7 +40,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.ComoBoxCategory = new System.Windows.Forms.ComboBox();
+            this.ComboBoxCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -90,7 +90,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -107,21 +107,21 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -149,15 +149,15 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ShowCategory:";
             // 
-            // ComoBoxCategory
+            // ComboBoxCategory
             // 
-            this.ComoBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComoBoxCategory.FormattingEnabled = true;
-            this.ComoBoxCategory.Location = new System.Drawing.Point(98, 33);
-            this.ComoBoxCategory.Name = "ComoBoxCategory";
-            this.ComoBoxCategory.Size = new System.Drawing.Size(121, 21);
-            this.ComoBoxCategory.TabIndex = 5;
-            this.ComoBoxCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCategory_SelectedIndexChanged);
+            this.ComboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxCategory.FormattingEnabled = true;
+            this.ComboBoxCategory.Location = new System.Drawing.Point(98, 33);
+            this.ComboBoxCategory.Name = "ComboBoxCategory";
+            this.ComboBoxCategory.Size = new System.Drawing.Size(121, 21);
+            this.ComboBoxCategory.TabIndex = 5;
+            this.ComboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCategory_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -303,7 +303,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.ComoBoxCategory);
+            this.Controls.Add(this.ComboBoxCategory);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TitleListbox);
             this.Controls.Add(this.menuStrip1);
@@ -332,7 +332,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox ComoBoxCategory;
+        private System.Windows.Forms.ComboBox ComboBoxCategory;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label CategoryLabel;
         private System.Windows.Forms.Label label5;
