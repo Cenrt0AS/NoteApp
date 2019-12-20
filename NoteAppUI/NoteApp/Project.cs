@@ -15,7 +15,6 @@ namespace NoteApp
         /// Словарь, который содержит в себе ключ и значение из полей Note.
         /// </summary>
 
-        //TODO: Можно еще хранить дополнительное поле CurrentNote.
         public Dictionary<int, Note> dictionary = new Dictionary<int, Note>();
         public Note CurrentNote;
 

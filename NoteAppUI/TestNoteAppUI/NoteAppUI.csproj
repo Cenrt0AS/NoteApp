@@ -123,7 +123,12 @@
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>md $(SolutionDir)InstallScripts
+md $(SolutionDir)InstallScripts\InstallFiles
+del $(ProjectDir)$(OutDir)*.* $(SolutionDir)InstallScripts\InstallFiles
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(ProjectDir)$(OutDir)*.dll $(SolutionDir)InstallScripts\InstallFiles</PostBuildEvent>
   </PropertyGroup>
 </Project>
