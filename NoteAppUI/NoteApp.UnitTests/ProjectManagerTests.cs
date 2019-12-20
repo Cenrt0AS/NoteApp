@@ -27,12 +27,7 @@ namespace NoteApp.UnitTests
             Note note1 = new Note("Машина", "Купить машину", NoteCategory.Home, new DateTime(2019, 11, 11).Date, new DateTime(2019, 11, 11).Date);
             Note note2 = new Note("Телефон", "Записать телефон", NoteCategory.HealthAndSport, new DateTime(2018, 12, 12).Date, new DateTime(2018, 12, 12).Date);
             Note note3 = new Note("Встреча", "Встретиться с человеком", NoteCategory.People, new DateTime(2019, 12, 12).Date, new DateTime(2019, 12, 12).Date);
-              string filename = $@"{path}\testSerialize1.json";
-            //for (int i=0; i<=3; i++)
-            //  { 
-
-            //  _testproject.dictionary.Add(i, note[0]);
-            //  }
+            string filename = $@"{path}\testSerialize1.json";
             _testproject.dictionary.Add(0, note0);
             _testproject.dictionary.Add(1, note1);
             _testproject.dictionary.Add(2, note2);
@@ -58,8 +53,7 @@ namespace NoteApp.UnitTests
             string testFilePath = $@"{path}\testSerialize.json";
             Project preactual = ProjectManager.LoadFromFile(testFilePath);
             Project actual = preactual;
-            int i = 0;
-            foreach (KeyValuePair<int, Note> kvp in _testproject2.dictionary)
+            for (int i = 0; i !=_testproject2.dictionary.Count;i++) 
             { 
                 Assert.AreEqual(expected.dictionary[i].Title, actual.dictionary[i].Title, 
                 "Значения в десериализации различаются !");
@@ -71,7 +65,6 @@ namespace NoteApp.UnitTests
                 "Значения в десериализации различаются !");
             Assert.AreEqual(expected.dictionary[i].LastmodDate, actual.dictionary[i].LastmodDate,
                 "Значения в десериализации различаются !");
-                i++;
             }
         }
     }

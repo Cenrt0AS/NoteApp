@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="NoteTests.cs" />
     <Compile Include="ProjectManagerTests.cs" />
-    <Compile Include="ProjectTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

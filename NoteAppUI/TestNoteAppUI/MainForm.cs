@@ -107,12 +107,7 @@ namespace TestNoteAppUI
             {
                 string NoteValue = TitleListbox.SelectedItem.ToString();
                 int OperatedKey = GetKeyByValue(NoteValue);
-                form.Note = _project.dictionary[OperatedKey];
-                //form.NoteTitle_Edit = _project.dictionary[OperatedKey].Title;
-                //form.NoteCategory_Edit = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
-                //form.NoteText_Edit = _project.dictionary[OperatedKey].NoteText;
-                //form.CreatedDateTime_Edit = _project.dictionary[OperatedKey].DateofCreation;
-                //form.ModifiedDateTime_Edit = _project.dictionary[OperatedKey].LastmodDate;
+                form.Note = _project.dictionary[OperatedKey];                
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
@@ -164,17 +159,12 @@ namespace TestNoteAppUI
             {
                 int selected = GetKeyByValue(TitleListbox.SelectedItem.ToString());
                 Titlelabel.Text = TitleListbox.SelectedItem.ToString();
-                string CategoryText = "Note not selected";
-                CategoryText = _project.dictionary[selected].Category.ToString();
-                CategoryLabel.Text = CategoryText;
-                CategoryLabel.Visible = true;
+                CategoryLabel.Text = _project.dictionary[selected].Category.ToString();
                 textBox.Text = _project.dictionary[selected].Text;
                 createdDateTimePicker.Value = _project.dictionary[selected].DateofCreation;
                 modifiedDateTimePicker.Value = _project.dictionary[selected].LastmodDate;
                 CurrentNoteSave(_project.dictionary[selected]);
             }
-            Titlelabel.Visible = true;
-
         }
         /// <summary>
         /// Верхнее меню ->Help->About
@@ -265,11 +255,6 @@ namespace TestNoteAppUI
                 string NoteValue = TitleListbox.SelectedItem.ToString();
                 int OperatedKey = GetKeyByValue(NoteValue);
                 form.Note = _project.dictionary[OperatedKey];
-                //form.NoteTitle_Edit = _project.dictionary[OperatedKey].Title;
-                //form.NoteCategory_Edit = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
-                //form.NoteText_Edit = _project.dictionary[OperatedKey].NoteText;
-                //form.CreatedDateTime_Edit = _project.dictionary[OperatedKey].DateofCreation;
-                //form.ModifiedDateTime_Edit = _project.dictionary[OperatedKey].LastmodDate;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     DateTime KeepDate = _project.dictionary[OperatedKey].DateofCreation;
@@ -331,47 +316,23 @@ namespace TestNoteAppUI
         //TODO: Текущая заметка
         private void CurrentNoteLoad()
         {
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes\\LastNote.txt");
-            FileInfo fileInf = new FileInfo(path);
-            if (fileInf.Exists)
+            if (_project.CurrentNote != null)
             {
-
-                string RLast = File.ReadAllText("LastNote.txt");
-                int Last = System.Convert.ToInt32(RLast);
-                string CategoryText = _project.dictionary[Last].Category.ToString();
-                CategoryLabel.Text = CategoryText;
-                CategoryLabel.Visible = true;
-                textBox.Text = _project.dictionary[Last].Text;
-                createdDateTimePicker.Value = _project.dictionary[Last].DateofCreation;
-                modifiedDateTimePicker.Value = _project.dictionary[Last].LastmodDate;
-                MessageBox.Show(Last.ToString());
-                fileInf.Delete();
+                Titlelabel.Text = _project.CurrentNote.Title;
+                CategoryLabel.Text = _project.CurrentNote.Category.ToString();
+                textBox.Text = _project.CurrentNote.Text;
+                createdDateTimePicker.Value = _project.CurrentNote.DateofCreation;
+                modifiedDateTimePicker.Value = _project.CurrentNote.LastmodDate;
             }
-            else
-            {
-                //int Last = GetKeyByValue(note.Title);
-                //    if (Last >= 0)
-                //    { 
-                //       Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-                //            if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes")))
-                //                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes"));
-                //       StreamWriter print = new StreamWriter("LastNote.txt", false);
-                //       print.Write(Last);
-                //       print.Close();
-            }
-
         }
-            private void CurrentNoteSave(Note note)
-            {
-            int Last = GetKeyByValue(note.Title);
-            if (Last >= 0)
-            {
-                string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyNotes\\LastNote.txt");
-                //FileInfo fileInf = new FileInfo(path);
 
-                StreamWriter print = new StreamWriter(path, false);
-                print.Write(Last);
-                print.Close();
+        private void CurrentNoteSave(Note note)
+        {
+            int LastSelected = GetKeyByValue(note.Title);
+            if (LastSelected >= 0)
+            {
+               // Titlelabel.Visible = true;
+                _project.CurrentNote = note;
             }
             
         }
