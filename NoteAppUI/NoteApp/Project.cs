@@ -18,5 +18,30 @@ namespace NoteApp
         public Dictionary<int, Note> dictionary = new Dictionary<int, Note>();
         public Note CurrentNote;
 
+        /// <summary>
+        /// percvaya realizacya
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<int,Note> SortedDictionary()
+        {
+            var newDictionary = from note in dictionary
+                                orderby note.Value.LastmodDate descending
+                                select note;
+
+            return newDictionary.ToDictionary( pair => pair.Key, pair => pair.Value );
+        }
+
+        /// <summary>
+        /// vtoraya relizacya
+        /// </summary>
+        public Dictionary<int,Note> SortedDictionary(NoteCategory category)
+        {
+            var newDictionary = from note in dictionary
+                                where note.Value.Category == category
+                                orderby note.Value.LastmodDate descending
+                                select note;
+
+            return newDictionary.ToDictionary(pair => pair.Key, pair => pair.Value);
+        }
     }
 }

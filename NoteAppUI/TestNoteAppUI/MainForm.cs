@@ -24,7 +24,11 @@ namespace TestNoteAppUI
             LoadProject();
             TitleListboxAdd();
             //Передача полю Combobox формы MainForm значений из перечисление NoteCategory.
-            ComboBoxCategory.DataSource = Enum.GetValues(typeof(NoteCategory));
+            //ComboBoxCategory.DataSource = Enum.GetValues(typeof(NoteCategory));
+            foreach (var item in Enum.GetValues(typeof(NoteCategory)))
+            {
+                ComboBoxCategory.Items.Add(item);
+            }
             ComboBoxCategory.Items.Add("All");
             CurrentNoteLoad();
 
@@ -37,13 +41,22 @@ namespace TestNoteAppUI
         public void TitleListboxAdd()
         {
             TitleListbox.Items.Clear();
-            foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
+            foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary())
             {
                 int n = 0;
                 if (ComboBoxCategory.SelectedIndex == Convert.ToInt32(kvp.Value.Category))
                 {
                     TitleListbox.Items.Insert(n, kvp.Value.Title);
                     n++;
+                }
+            }
+            if (ComboBoxCategory.SelectedIndex == 7)
+            {
+                foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
+                {
+                    int n = 0;
+                    TitleListbox.Items.Insert(n, kvp.Value.Title);
+                     n++;
                 }
             }
         }
@@ -334,6 +347,19 @@ namespace TestNoteAppUI
                // Titlelabel.Visible = true;
                 _project.CurrentNote = note;
             }
+            
+        }
+
+        private void Sortingtest_Click(object sender, EventArgs e)
+        {
+            TitleListbox.Items.Clear();
+            foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary())
+            {
+                int n = 0;
+                TitleListbox.Items.Insert(n, kvp.Value.Title);
+                n++;
+            }
+
             
         }
     }

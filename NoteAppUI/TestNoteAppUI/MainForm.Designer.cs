@@ -53,6 +53,7 @@
             this.EditNoteButton = new System.Windows.Forms.Button();
             this.RemoveNoteButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.Sortingtest = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -282,11 +283,22 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Заметки:";
             // 
+            // Sortingtest
+            // 
+            this.Sortingtest.Location = new System.Drawing.Point(576, 34);
+            this.Sortingtest.Name = "Sortingtest";
+            this.Sortingtest.Size = new System.Drawing.Size(75, 23);
+            this.Sortingtest.TabIndex = 22;
+            this.Sortingtest.Text = "sort";
+            this.Sortingtest.UseVisualStyleBackColor = true;
+            this.Sortingtest.Click += new System.EventHandler(this.Sortingtest_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 420);
+            this.Controls.Add(this.Sortingtest);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.RemoveNoteButton);
             this.Controls.Add(this.EditNoteButton);
@@ -341,6 +353,7 @@
         private System.Windows.Forms.Button EditNoteButton;
         private System.Windows.Forms.Button RemoveNoteButton;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Sortingtest;
     }
 }
 
