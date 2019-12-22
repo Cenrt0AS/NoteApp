@@ -31,7 +31,6 @@ namespace TestNoteAppUI
             }
             ComboBoxCategory.Items.Add("All");
             CurrentNoteLoad();
-            MessageBox.Show(AvailableKey().ToString());
         }
 
         /// <summary>
@@ -90,11 +89,12 @@ namespace TestNoteAppUI
         /// <summary>
         /// Верхнее меню-> Добавление.
         /// </summary>
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AddToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NoteManage form = new NoteManage(_project);
             int OperatedKey = AvailableKey();
-
+            //TODO: Докидывать категорию в окно добавление.
+            form.note.Category = (NoteCategory)ComboBoxCategory.SelectedIndex;
             if (form.ShowDialog() == DialogResult.OK)
             {
                 _project.dictionary.Add(AvailableKey(), form.note);
@@ -108,7 +108,7 @@ namespace TestNoteAppUI
         /// <summary>
         /// Верхнее меню-> Редактирование.
         /// </summary>
-        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void EditToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             NoteManage form = new NoteManage(_project);
             // Переменная для хранения ключа редактирования записи.
@@ -146,7 +146,7 @@ namespace TestNoteAppUI
         /// <summary>
         /// Верхнее меню-> Удаление.
         /// </summary>
-        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RemoveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Проверка выборки.
             int selectedID = TitleListbox.SelectedIndex;
