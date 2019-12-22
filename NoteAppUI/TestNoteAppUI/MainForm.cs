@@ -41,14 +41,14 @@ namespace TestNoteAppUI
         public void TitleListboxAdd()
         {
             TitleListbox.Items.Clear();
-            foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary())
+            foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary((NoteCategory)ComboBoxCategory.SelectedIndex))
             {
                 int n = 0;
-                if (ComboBoxCategory.SelectedIndex == Convert.ToInt32(kvp.Value.Category))
-                {
+                //if (ComboBoxCategory.SelectedIndex == Convert.ToInt32(kvp.Value.Category))
+                //{
                     TitleListbox.Items.Insert(n, kvp.Value.Title);
                     n++;
-                }
+                //}
             }
             if (ComboBoxCategory.SelectedIndex == 7)
             {
