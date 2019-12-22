@@ -25,8 +25,8 @@ namespace TestNoteAppUI
             TitleListboxAdd();
             //Передача полю Combobox формы MainForm значений из перечисление NoteCategory.
             ComboBoxCategory.DataSource = Enum.GetValues(typeof(NoteCategory));
+            ComboBoxCategory.Items.Add("All");
             CurrentNoteLoad();
-            //ComboBoxCategory.Items.Add("All");
 
             //Дополнительная реализация конец.
         }
