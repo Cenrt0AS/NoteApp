@@ -31,8 +31,7 @@ namespace TestNoteAppUI
             }
             ComboBoxCategory.Items.Add("All");
             CurrentNoteLoad();
-
-            //Дополнительная реализация конец.
+            MessageBox.Show(AvailableKey().ToString());
         }
 
         /// <summary>
@@ -97,6 +96,8 @@ namespace TestNoteAppUI
            
             if (form.ShowDialog() == DialogResult.OK)
             {
+                //TODO: Тут программа вылетает...
+                MessageBox.Show(AvailableKey().ToString());
                 _project.dictionary.Add(AvailableKey(), form.note);
                 TitleListboxAdd();
                  SaveProject();
@@ -217,7 +218,6 @@ namespace TestNoteAppUI
                 if (kvp.Value.Title.Equals(value))
                     return kvp.Key;
             }
-        
             return -1;
         }
         /// <summary>
@@ -231,9 +231,8 @@ namespace TestNoteAppUI
             {
                 if (kvp.Key == i)
                     i++;
-                else return i;
             }
-            return -1;
+            return i;
         }
 
         /// <summary>
@@ -353,14 +352,26 @@ namespace TestNoteAppUI
         private void Sortingtest_Click(object sender, EventArgs e)
         {
             TitleListbox.Items.Clear();
-            foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary())
+            if (ComboBoxCategory.SelectedIndex ==7)
+            { 
+                foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary())
+                {
+                    int n = 0;
+                    TitleListbox.Items.Insert(n, kvp.Value.Title);
+                    n++;
+                }
+            }
+            else
             {
-                int n = 0;
-                TitleListbox.Items.Insert(n, kvp.Value.Title);
-                n++;
+                foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary((NoteCategory)ComboBoxCategory.SelectedIndex))
+                {
+                    int n = 0;
+                    TitleListbox.Items.Insert(n, kvp.Value.Title);
+                    n++;
+                }
             }
 
-            
+
         }
     }
 
