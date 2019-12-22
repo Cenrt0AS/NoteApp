@@ -336,6 +336,7 @@ namespace TestNoteAppUI
                 textBox.Text = _project.CurrentNote.Text;
                 createdDateTimePicker.Value = _project.CurrentNote.DateofCreation;
                 modifiedDateTimePicker.Value = _project.CurrentNote.LastmodDate;
+                ComboBoxCategory.SelectedIndex = Convert.ToInt32(_project.CurrentNote.Category);
             }
         }
 
@@ -344,7 +345,6 @@ namespace TestNoteAppUI
             int LastSelected = GetKeyByValue(note.Title);
             if (LastSelected >= 0)
             {
-               // Titlelabel.Visible = true;
                 _project.CurrentNote = note;
             }
             
