@@ -93,14 +93,15 @@ namespace TestNoteAppUI
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NoteManage form = new NoteManage(_project);
-           
+            int OperatedKey = AvailableKey();
+
             if (form.ShowDialog() == DialogResult.OK)
             {
-                //TODO: Тут программа вылетает...
-                MessageBox.Show(AvailableKey().ToString());
                 _project.dictionary.Add(AvailableKey(), form.note);
                 TitleListboxAdd();
-                 SaveProject();
+                SaveProject();
+                ComboBoxCategory.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
             }           
         }
 
@@ -241,12 +242,15 @@ namespace TestNoteAppUI
         private void AddNoteButton_Click(object sender, EventArgs e)
         {
             NoteManage form = new NoteManage(_project);
+            int OperatedKey = AvailableKey();
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                _project.dictionary.Add(_project.dictionary.Count, form.note);
+                _project.dictionary.Add(AvailableKey(), form.note);
                 TitleListboxAdd();
                 SaveProject();
+                ComboBoxCategory.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
             }
         }
         /// <summary>
