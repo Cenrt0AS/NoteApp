@@ -123,11 +123,12 @@
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>del /q "$(SolutionDir)InstallScripts\Release\*"</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>xcopy "$(SolutionDir)TestNoteAppUI\bin\Release\*.dll" "$(SolutionDir)InstallScripts\Release"
+xcopy "$(SolutionDir)TestNoteAppUI\bin\Release\*.exe" "$(SolutionDir)InstallScripts\Release"
+ 
+"C:\Program Files\Inno Setup 6\ISCC.exe" $(SolutionDir)InstallScripts\installer.iss"</PostBuildEvent>
   </PropertyGroup>
 </Project>

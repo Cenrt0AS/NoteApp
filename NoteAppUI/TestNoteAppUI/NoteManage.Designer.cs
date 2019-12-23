@@ -75,6 +75,8 @@
             this.titleTBox.Name = "titleTBox";
             this.titleTBox.Size = new System.Drawing.Size(350, 20);
             this.titleTBox.TabIndex = 3;
+            this.titleTBox.Text = "Без имени";
+            this.titleTBox.TextChanged += new System.EventHandler(this.titleTBox_TextChanged);
             // 
             // ComboBoxCategory1
             // 

@@ -19,7 +19,7 @@ namespace NoteApp
         /// <summary>
         /// 
         /// </summary>
-        private string _title;
+        private string _title = "Без имени";
 
         /// <summary>
         /// 

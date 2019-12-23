@@ -51,5 +51,19 @@ namespace TestNoteAppUI
             DialogResult = DialogResult.OK;
         }
 
+        private void titleTBox_TextChanged(object sender, EventArgs e)
+        {
+            if (titleTBox.TextLength>50)
+            {
+                DialogResult result = MessageBox.Show(
+                "Длина имени не может быть больше 50 символов",
+                "Ошибка",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.DefaultDesktopOnly);
+                titleTBox.Text = "Non correct";
+            }
+        }
     }
 }
