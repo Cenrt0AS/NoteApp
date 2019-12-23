@@ -30,6 +30,7 @@ namespace TestNoteAppUI
                 ComboBoxCategory.Items.Add(item);
             }
             ComboBoxCategory.Items.Add("All");
+            ComboBoxCategory.SelectedIndex = 7;
             CurrentNoteLoad();
         }
 
@@ -161,7 +162,7 @@ namespace TestNoteAppUI
                 TitleListboxAdd();
                 SaveProject();
                 textBox.Text = "";
-                label2.Text = "";
+                Titlelabel.Text = "";
             }
         }
 
@@ -300,7 +301,7 @@ namespace TestNoteAppUI
                 _project.dictionary.Remove(operatedKey);
                 TitleListboxAdd();
                 textBox.Text = "";
-                label2.Text = "";
+                Titlelabel.Text = "";
                 SaveProject();
             }
         }
