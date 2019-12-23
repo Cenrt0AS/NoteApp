@@ -17,9 +17,16 @@ namespace TestNoteAppUI
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void GitHubURL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Close();
+            GitHubURL.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://github.com/YalovskiyV/");
+        }
+
+        private void EmailURL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EmailURL.LinkVisited = true;
+            System.Diagnostics.Process.Start("mailto:something@mail.com");
         }
     }
 }
