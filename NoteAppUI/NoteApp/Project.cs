@@ -25,7 +25,7 @@ namespace NoteApp
         public Dictionary<int,Note> SortedDictionary()
         {
             var newDictionary = from note in dictionary
-                                orderby note.Value.LastmodDate descending
+                                orderby note.Value.LastmodDate ascending
                                 select note;
 
             return newDictionary.ToDictionary( pair => pair.Key, pair => pair.Value );
@@ -38,7 +38,7 @@ namespace NoteApp
         {
             var newDictionary = from note in dictionary
                                 where note.Value.Category == category
-                                orderby note.Value.LastmodDate descending
+                                orderby note.Value.LastmodDate ascending
                                 select note;
 
             return newDictionary.ToDictionary(pair => pair.Key, pair => pair.Value);

@@ -44,17 +44,17 @@ namespace TestNoteAppUI
                 int n = 0;
                 //if (ComboBoxCategory.SelectedIndex == Convert.ToInt32(kvp.Value.Category))
                 //{
-                    TitleListbox.Items.Insert(n, kvp.Value.Title);
-                    n++;
+                TitleListbox.Items.Insert(n, kvp.Value.Title);
+                n++;
                 //}
             }
             if (ComboBoxCategory.SelectedIndex == 7)
             {
-                foreach (KeyValuePair<int, Note> kvp in _project.dictionary)
+                foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary())
                 {
                     int n = 0;
                     TitleListbox.Items.Insert(n, kvp.Value.Title);
-                     n++;
+                    n++;
                 }
             }
         }
@@ -94,7 +94,7 @@ namespace TestNoteAppUI
             NoteManage form = new NoteManage(_project);
             int OperatedKey = AvailableKey();
             //TODO: Докидывать категорию в окно добавление.
-            form.note.Category = (NoteCategory)ComboBoxCategory.SelectedIndex;
+           // form.note.Category = (NoteCategory)ComboBoxCategory.SelectedIndex;
             if (form.ShowDialog() == DialogResult.OK)
             {
                 _project.dictionary.Add(AvailableKey(), form.note);
@@ -351,31 +351,6 @@ namespace TestNoteAppUI
                 _project.CurrentNote = note;
             }
             
-        }
-
-        private void Sortingtest_Click(object sender, EventArgs e)
-        {
-            TitleListbox.Items.Clear();
-            if (ComboBoxCategory.SelectedIndex ==7)
-            { 
-                foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary())
-                {
-                    int n = 0;
-                    TitleListbox.Items.Insert(n, kvp.Value.Title);
-                    n++;
-                }
-            }
-            else
-            {
-                foreach (KeyValuePair<int, Note> kvp in _project.SortedDictionary((NoteCategory)ComboBoxCategory.SelectedIndex))
-                {
-                    int n = 0;
-                    TitleListbox.Items.Insert(n, kvp.Value.Title);
-                    n++;
-                }
-            }
-
-
         }
     }
 

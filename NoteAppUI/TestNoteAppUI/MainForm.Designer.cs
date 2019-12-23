@@ -53,7 +53,6 @@
             this.EditNoteButton = new System.Windows.Forms.Button();
             this.RemoveNoteButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.Sortingtest = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +84,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -102,27 +101,27 @@
             this.EditToolStripMenuItem1,
             this.RemoveToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // AddToolStripMenuItem
             // 
             this.AddToolStripMenuItem.Name = "AddToolStripMenuItem";
-            this.AddToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AddToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.AddToolStripMenuItem.Text = "Add";
             this.AddToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem1
             // 
             this.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1";
-            this.EditToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.EditToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
             this.EditToolStripMenuItem1.Text = "Edit";
             this.EditToolStripMenuItem1.Click += new System.EventHandler(this.EditToolStripMenuItem1_Click);
             // 
             // RemoveToolStripMenuItem
             // 
             this.RemoveToolStripMenuItem.Name = "RemoveToolStripMenuItem";
-            this.RemoveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RemoveToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.RemoveToolStripMenuItem.Text = "Remove";
             this.RemoveToolStripMenuItem.Click += new System.EventHandler(this.RemoveToolStripMenuItem_Click);
             // 
@@ -131,13 +130,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -283,22 +282,11 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Заметки:";
             // 
-            // Sortingtest
-            // 
-            this.Sortingtest.Location = new System.Drawing.Point(576, 34);
-            this.Sortingtest.Name = "Sortingtest";
-            this.Sortingtest.Size = new System.Drawing.Size(75, 23);
-            this.Sortingtest.TabIndex = 22;
-            this.Sortingtest.Text = "sort";
-            this.Sortingtest.UseVisualStyleBackColor = true;
-            this.Sortingtest.Click += new System.EventHandler(this.Sortingtest_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 420);
-            this.Controls.Add(this.Sortingtest);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.RemoveNoteButton);
             this.Controls.Add(this.EditNoteButton);
@@ -353,7 +341,6 @@
         private System.Windows.Forms.Button EditNoteButton;
         private System.Windows.Forms.Button RemoveNoteButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Sortingtest;
     }
 }
 
