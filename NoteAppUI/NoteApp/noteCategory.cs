@@ -18,6 +18,5 @@ namespace NoteApp
             Docs,
             Finance,
             Other
-        
-    }
+        }
 }

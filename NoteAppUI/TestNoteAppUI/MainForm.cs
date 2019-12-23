@@ -329,7 +329,6 @@ namespace TestNoteAppUI
             }
         }
 
-        //TODO: Текущая заметка
         private void CurrentNoteLoad()
         {
             if (_project.CurrentNote != null)
