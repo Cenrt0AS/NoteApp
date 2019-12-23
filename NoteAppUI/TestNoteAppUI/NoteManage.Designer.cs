@@ -166,7 +166,7 @@
             this.MinimumSize = new System.Drawing.Size(410, 310);
             this.Name = "NoteManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Note";
+            this.Text = "Add/Edit Note";
             this.ResumeLayout(false);
             this.PerformLayout();
 

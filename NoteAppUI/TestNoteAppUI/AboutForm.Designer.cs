@@ -119,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 246);
+            this.ClientSize = new System.Drawing.Size(312, 246);
             this.Controls.Add(this.GitHubURL);
             this.Controls.Add(this.EmailURL);
             this.Controls.Add(this.label6);
