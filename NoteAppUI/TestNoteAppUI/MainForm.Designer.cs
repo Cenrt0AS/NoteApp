@@ -90,7 +90,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -107,21 +107,21 @@
             // AddToolStripMenuItem
             // 
             this.AddToolStripMenuItem.Name = "AddToolStripMenuItem";
-            this.AddToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.AddToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AddToolStripMenuItem.Text = "Add";
             this.AddToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem1
             // 
             this.EditToolStripMenuItem1.Name = "EditToolStripMenuItem1";
-            this.EditToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
+            this.EditToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.EditToolStripMenuItem1.Text = "Edit";
             this.EditToolStripMenuItem1.Click += new System.EventHandler(this.EditToolStripMenuItem1_Click);
             // 
             // RemoveToolStripMenuItem
             // 
             this.RemoveToolStripMenuItem.Name = "RemoveToolStripMenuItem";
-            this.RemoveToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.RemoveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.RemoveToolStripMenuItem.Text = "Remove";
             this.RemoveToolStripMenuItem.Click += new System.EventHandler(this.RemoveToolStripMenuItem_Click);
             // 
@@ -136,14 +136,14 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Location = new System.Drawing.Point(9, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 3;
@@ -153,9 +153,9 @@
             // 
             this.ComboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxCategory.FormattingEnabled = true;
-            this.ComboBoxCategory.Location = new System.Drawing.Point(98, 33);
+            this.ComboBoxCategory.Location = new System.Drawing.Point(94, 66);
             this.ComboBoxCategory.Name = "ComboBoxCategory";
-            this.ComboBoxCategory.Size = new System.Drawing.Size(121, 21);
+            this.ComboBoxCategory.Size = new System.Drawing.Size(155, 21);
             this.ComboBoxCategory.TabIndex = 5;
             this.ComboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCategory_SelectedIndexChanged);
             // 
@@ -191,7 +191,7 @@
             // 
             this.createdDateTimePicker.Checked = false;
             this.createdDateTimePicker.Enabled = false;
-            this.createdDateTimePicker.Location = new System.Drawing.Point(308, 95);
+            this.createdDateTimePicker.Location = new System.Drawing.Point(308, 91);
             this.createdDateTimePicker.Name = "createdDateTimePicker";
             this.createdDateTimePicker.Size = new System.Drawing.Size(137, 20);
             this.createdDateTimePicker.TabIndex = 12;
@@ -209,7 +209,7 @@
             // 
             this.modifiedDateTimePicker.Checked = false;
             this.modifiedDateTimePicker.Enabled = false;
-            this.modifiedDateTimePicker.Location = new System.Drawing.Point(509, 95);
+            this.modifiedDateTimePicker.Location = new System.Drawing.Point(509, 92);
             this.modifiedDateTimePicker.Name = "modifiedDateTimePicker";
             this.modifiedDateTimePicker.Size = new System.Drawing.Size(142, 20);
             this.modifiedDateTimePicker.TabIndex = 14;
@@ -218,7 +218,7 @@
             // 
             this.Titlelabel.AutoSize = true;
             this.Titlelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Titlelabel.Location = new System.Drawing.Point(262, 24);
+            this.Titlelabel.Location = new System.Drawing.Point(252, 31);
             this.Titlelabel.Name = "Titlelabel";
             this.Titlelabel.Size = new System.Drawing.Size(0, 31);
             this.Titlelabel.TabIndex = 16;
@@ -231,6 +231,7 @@
             this.textBox.Location = new System.Drawing.Point(258, 121);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
+            this.textBox.ReadOnly = true;
             this.textBox.Size = new System.Drawing.Size(444, 287);
             this.textBox.TabIndex = 17;
             // 
@@ -240,6 +241,7 @@
             this.AddNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddNoteButton.BackgroundImage")));
             this.AddNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddNoteButton.ForeColor = System.Drawing.Color.LightGray;
             this.AddNoteButton.Location = new System.Drawing.Point(9, 389);
             this.AddNoteButton.Name = "AddNoteButton";
             this.AddNoteButton.Size = new System.Drawing.Size(24, 24);
@@ -253,6 +255,7 @@
             this.EditNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditNoteButton.BackgroundImage")));
             this.EditNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.EditNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditNoteButton.ForeColor = System.Drawing.Color.LightGray;
             this.EditNoteButton.Location = new System.Drawing.Point(39, 389);
             this.EditNoteButton.Name = "EditNoteButton";
             this.EditNoteButton.Size = new System.Drawing.Size(24, 24);
@@ -266,6 +269,7 @@
             this.RemoveNoteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RemoveNoteButton.BackgroundImage")));
             this.RemoveNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.RemoveNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveNoteButton.ForeColor = System.Drawing.Color.LightGray;
             this.RemoveNoteButton.Location = new System.Drawing.Point(69, 389);
             this.RemoveNoteButton.Name = "RemoveNoteButton";
             this.RemoveNoteButton.Size = new System.Drawing.Size(24, 24);
@@ -276,10 +280,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(7, 57);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(8, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 29);
+            this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 21;
             this.label2.Text = "Заметки:";
             // 

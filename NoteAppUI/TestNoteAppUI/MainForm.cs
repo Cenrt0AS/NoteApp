@@ -130,8 +130,10 @@ namespace TestNoteAppUI
                     form.note.DateofCreation = KeepDate;
                     _project.dictionary[OperatedKey] =(form.note);
                     SaveProject();
-                    TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
+                    //TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
                     TitleListboxAdd();
+                    ComboBoxCategory.SelectedIndex = Convert.ToInt32(_project.dictionary[OperatedKey].Category);
+                    TitleListbox.SelectedItem = (_project.dictionary[OperatedKey].Title);
                 }
             }
         }

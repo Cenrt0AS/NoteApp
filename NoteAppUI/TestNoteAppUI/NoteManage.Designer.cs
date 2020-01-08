@@ -118,7 +118,7 @@
             this.Cancelbutton.Location = new System.Drawing.Point(345, 308);
             this.Cancelbutton.Name = "Cancelbutton";
             this.Cancelbutton.Size = new System.Drawing.Size(75, 23);
-            this.Cancelbutton.TabIndex = 9;
+            this.Cancelbutton.TabIndex = 11;
             this.Cancelbutton.Text = "Cancel";
             this.Cancelbutton.UseVisualStyleBackColor = true;
             this.Cancelbutton.Click += new System.EventHandler(this.Cancelbutton_Click);
@@ -144,7 +144,7 @@
             this.TextTBox.Multiline = true;
             this.TextTBox.Name = "TextTBox";
             this.TextTBox.Size = new System.Drawing.Size(423, 201);
-            this.TextTBox.TabIndex = 11;
+            this.TextTBox.TabIndex = 9;
             // 
             // NoteManage
             // 
@@ -165,6 +165,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(410, 310);
             this.Name = "NoteManage";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Edit Note";
             this.ResumeLayout(false);
